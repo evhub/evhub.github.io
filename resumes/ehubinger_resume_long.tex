@@ -1,0 +1,369 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%% Simple LaTeX CV Template %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NOTE: If you find that it says                                     %%
+%%                                                                    %%
+%%                           1 of ??                                  %%
+%%                                                                    %%
+%% at the bottom of your first page, this means that the AUX file     %%
+%% was not available when you ran LaTeX on this source. Simply RERUN  %%
+%% LaTeX to get the ``??'' replaced with the number of the last page  %%
+%% of the document. The AUX file will be generated on the first run   %%
+%% of LaTeX and used on the second run to fill in all of the          %%
+%% references.                                                        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Don't like 10pt? Try 11pt or 12pt
+\documentclass[10pt]{article}
+
+% This is a helpful package that puts math inside length specifications
+\usepackage{calc}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{multicol}
+
+
+% Simpler bibsection for CV sections
+% (thanks to natbib for inspiration)
+\makeatletter
+\newlength{\bibhang}
+\setlength{\bibhang}{1em}
+\newlength{\bibsep}
+ {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+\newenvironment{bibsection}%
+        {\vspace{-\baselineskip}\begin{list}{}{%
+       \setlength{\leftmargin}{\bibhang}%
+       \setlength{\itemindent}{-\leftmargin}%
+       \setlength{\itemsep}{\bibsep}%
+       \setlength{\parsep}{\z@}%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+\makeatother
+
+% Layout: Puts the section titles on left side of page
+\reversemarginpar
+
+%
+%         PAPER SIZE, PAGE NUMBER, AND DOCUMENT LAYOUT NOTES:
+%
+% The next \usepackage line changes the layout for CV style section
+% headings as marginal notes. It also sets up the paper size as either
+% letter or A4. By default, letter was used. If A4 paper is desired,
+% comment out the letterpaper lines and uncomment the a4paper lines.
+%
+% As you can see, the margin widths and section title widths can be
+% easily adjusted.
+%
+% ALSO: Notice that the includefoot option can be commented OUT in order
+% to put the PAGE NUMBER *IN* the bottom margin. This will make the
+% effective text area larger.
+%
+% IF YOU WISH TO REMOVE THE ``of LASTPAGE'' next to each page number,
+% see the note about the +LP and -LP lines below. Comment out the +LP
+% and uncomment the -LP.
+%
+% IF YOU WISH TO REMOVE PAGE NUMBERS, be sure that the includefoot line
+% is uncommented and ALSO uncomment the \pagestyle{empty} a few lines
+% below.
+%
+
+%% Use these lines for letter-sized paper
+\usepackage[paper=letterpaper,
+            %includefoot, % Uncomment to put page number above margin
+            marginparwidth=.9in,     % Length of section titles
+            marginparsep=.05in,       % Space between titles and text
+            margin=0.5in,               % 1 inch margins
+            includemp]{geometry}
+
+%% Use these lines for A4-sized paper
+%\usepackage[paper=a4paper,
+%            %includefoot, % Uncomment to put page number above margin
+%            marginparwidth=30.5mm,    % Length of section titles
+%            marginparsep=1.5mm,       % Space between titles and text
+%            margin=25mm,              % 25mm margins
+%            includemp]{geometry}
+
+%% More layout: Get rid of indenting throughout entire document
+\setlength{\parindent}{0in}
+
+%% This gives us fun enumeration environments. compactitem will be nice.
+\usepackage{paralist}
+
+%% Reference the last page in the page number
+%
+% NOTE: comment the +LP line and uncomment the -LP line to have page
+%       numbers without the ``of ##'' last page reference)
+%
+% NOTE: uncomment the \pagestyle{empty} line to get rid of all page
+%       numbers (make sure includefoot is commented out above)
+%
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+% \pagestyle{empty}      % Uncomment this to get rid of page numbers
+\fancyhf{}\renewcommand{\headrulewidth}{0pt}
+\fancyfootoffset{\marginparsep+\marginparwidth}
+\newlength{\footpageshift}
+\setlength{\footpageshift}
+          {0.5\textwidth+0.5\marginparsep+0.5\marginparwidth-2in}
+\lfoot{\hspace{\footpageshift}%
+       \parbox{4in}{\, \hfill %
+                    \arabic{page} of \protect\pageref*{LastPage} % +LP
+%                    \arabic{page}                               % -LP
+                    \hfill \,}}
+
+% Finally, give us PDF bookmarks
+\usepackage{color,hyperref}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.3}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% The title (name) with a horizontal rule under it
+%
+% Usage: \makeheading{name}
+%
+% Place at top of document. It should be the first thing.
+\newcommand{\makeheading}[1]%
+        {\hspace*{-\marginparsep minus \marginparwidth}%
+         \begin{minipage}[t]{\textwidth+\marginparwidth+\marginparsep}%
+                {\Large \bfseries #1}\\[-0.8\baselineskip]%
+                 \rule{\columnwidth}{0.25pt}%
+         \end{minipage}}
+
+% The section headings
+%
+% Usage: \section{section name}
+%
+% Follow this section IMMEDIATELY with the first line of the section
+% text. Do not put whitespace in between. That is, do this:
+%
+%       \section{My Information}
+%       Here is my information.
+%
+% and NOT this:
+%
+%       \section{My Information}
+%
+%       Here is my information.
+%
+% Otherwise the top of the section header will not line up with the top
+% of the section. Of course, using a single comment character (%) on
+% empty lines allows for the function of the first example with the
+% readability of the second example.
+\renewcommand{\section}[2]%
+        {\pagebreak[3]\vspace{1.3\baselineskip}%
+         \phantomsection\addcontentsline{toc}{section}{#1}%
+         \hspace{0in}%
+         \marginpar{
+         \raggedright \small \scshape #1}#2}
+
+% An itemize-style list with lots of space between items
+\newenvironment{outerlist}[1][\enskip\textbullet]%
+        {\begin{itemize}[#1]}{\end{itemize}%
+         \vspace{-.6\baselineskip}}
+
+% An environment IDENTICAL to outerlist that has better pre-list spacing
+% when used as the first thing in a \section
+\newenvironment{lonelist}[1][\enskip\textbullet]%
+        {\vspace{-\baselineskip}\begin{list}{#1}{%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{list}\vspace{-.6\baselineskip}}
+
+% An itemize-style list with little space between items
+\newenvironment{innerlist}[1][\enskip\textbullet]%
+        {\begin{compactitem}[#1]}{\end{compactitem}}
+
+% An environment IDENTICAL to innerlist that has better pre-list spacing
+% when used as the first thing in a \section
+\newenvironment{loneinnerlist}[1][\enskip\textbullet]%
+        {\vspace{-\baselineskip}\begin{compactitem}[#1]}
+        {\end{compactitem}\vspace{-.6\baselineskip}}
+
+% To add some paragraph space between lines.
+% This also tells LaTeX to preferably break a page on one of these gaps
+% if there is a needed pagebreak nearby.
+\newcommand{\blankline}{\quad\pagebreak[2]\vspace{-0.3\baselineskip}}
+
+% For \url{SOME_URL}, links SOME_URL to the url SOME_URL
+\providecommand*\url[1]{\href{#1}{#1}}
+% Same as above, but pretty-prints SOME_URL in teletype fixed-width font
+\renewcommand*\url[1]{\href{#1}{\texttt{#1}}}
+
+% For \email{ADDRESS}, links ADDRESS to the url mailto:ADDRESS
+\providecommand*\email[1]{\href{mailto:#1}{#1}}
+% Same as above, but pretty-prints ADDRESS in teletype fixed-width font
+%\renewcommand*\email[1]{\href{mailto:#1}{\texttt{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%% End Helper Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Begin CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\makeheading{Evan Hubinger}
+
+\section{Contact Information}
+% NOTE: Mind where the & separators and \\ breaks are in the following
+%       table.
+%
+% ALSO: \rcollength is the width of the right column of the table
+%       (adjust it to your liking; default is 1.85in).
+%
+%\newlength{\rcollength}\setlength{\rcollength}{1.75in}
+%
+%\begin{tabular}[t]{@{}p{\textwidth-\rcollength-2.3in}p{2.3in}p{\rcollength}}
+\begin{tabular}[t]{@{}p{4.85in}p{2.90in}}
+\email{evanjhub@gmail.com}      & 340 E Foothill Boulevard \\
+\url{https://github.com/evhub}  & Box 409 \\
+(925) 240-3826                  & Claremont, CA 91711
+\end{tabular}
+
+\section{Education}
+    \textbf{Harvey Mudd College}, Claremont, CA
+    \hfill Expected Graduation: May 2019 \\
+    \-\quad \textbf{B.S. in Mathematics and Computer Science}
+    \hfill GPA: 3.7 \\
+    \textbf{The College Preparatory School}, Oakland, CA
+    \hfill Graduated: May 2015
+
+\section{Programming Languages}
+    \begin{minipage}[t]{.22\textwidth}
+    \textbf{Expert} \\
+    \verb|Python, Coconut|
+    \end{minipage}
+    \begin{minipage}[t]{.485\textwidth}
+    \textbf{Proficient} \\
+    \verb|Haskell, C++, R, Node.js, CoffeeScript|
+    \end{minipage}
+    \begin{minipage}[t]{.475\textwidth}
+    \textbf{Knowledgeable} \\
+    \verb|Java, MATLAB, Mathematica|
+    \end{minipage}
+
+\section{Summary}
+Three summers of professional software engineering experience, one at Yelp and two at Ripple. Created two major open-source projects, the Coconut programming language and Undebt, which together have over 2,000 stars on GitHub. Studying mathematics and computer science at Harvey Mudd College.
+
+\section{Work Experience}
+\textbf{Software Engineering Intern}
+\hfill June - August 2016 \\
+\textbf{Yelp, San Francisco, CA} \\
+$\bullet$ Primary author of Undebt, an open-source static code analysis tool for massive automated code refactoring with over 1,300 stars on GitHub. \\
+$\bullet$ Wrote a blog post on Undebt (link below), which proved to be Yelp's most popular blog post to date and was featured on the front page of Hacker News. \\
+\url{https://engineeringblog.yelp.com/2016/08/undebt-how-we-refactored-3-million-lines-of-code.html} \\
+$\bullet$ Fixed errors in Yelp's configuration management that had previously taken down yelp.com multiple times. \\
+$\bullet$ Rewrote Yelp's system for running large batch data processing operations with EMR. \\
+
+\textbf{Software Engineering Intern}
+\hfill June - August 2014; June - August 2015 \\
+\textbf{Ripple, San Francisco, CA} \\
+$\bullet$ Worked on designing Interledger, a trustless system for cross-currency transactions between arbitrary agents. \\
+$\bullet$ Wrote a tool to do cryptographically secure generation of wallets for financial institutions. \\
+$\bullet$ Developed a program to manage Ripple's GitHub infrastructure.
+
+\section{Personal Projects}
+\textbf{The Coconut programming language}
+\hfill October 2014 - Present \\
+\url{http://coconut-lang.org} \\
+Created the Coconut programming language, a novel functional programming language that compiles to Python. Coconut has been viewed over 35,000 times, has collected over 700 stars on GitHub, has been shown on the front page of Hacker News, r/Python, and r/Programming, has been featured on InfoWorld.com and Pointer.io, and has a regular, dedicated 40-person meetup in NYC. See Coconut's website (link above) for more information. \\
+
+\textbf{DeTeXiPi}
+\hfill October 2015 \\
+Hackathon project to load DeTeXify onto a Raspberry Pi and connect it to a computer as a keyboard that types out LaTeX commands for drawn symbols. \\
+
+\textbf{Discrete Wavelet Transform Steganography}
+\hfill April - May 2015 \\
+\url{https://github.com/evhub/steganography} \\
+Developed a program to perform image steganography using the discrete wavelet transform method. Written in the Coconut programming language. \\
+
+\textbf{Iterated Recursive Prisoner's Dilemma Simulator}
+\hfill April 2015 \\
+\url{https://github.com/evhub/prisoner} \\
+Developed a library for performing and competing in iterated prisoner's dilemma competitions in which the competing programs can simulate the opposing programs. Written in the Coconut programming language. \\
+
+\textbf{The Rabbit Programming Language}
+\hfill April - December 2014 \\
+\url{https://github.com/evhub/rabbit} \\
+Created the Rabbit Programming Language, a purely functional, interpreted, dynamically-typed scripting language built on top of universal Python for full interoperability. Wrote a technical paper describing the language, which can be found on GitHub.
+
+\section{Open Source Contributions}
+\textbf{The Python Programming Language}
+Minor unittest and documentation improvements. \\
+\textbf{Jupyter (IPython)}
+Fixed an issue that broke custom syntax highlighting. \\
+\textbf{StaticConf}
+Improved resiliency in the event of missing data. \\
+\textbf{PyParsing}
+Fixed numerous issues including Unicode support and PyPy compatibility. \\
+\textbf{RippleD}
+Significant improvements to the compilation/build process. \\
+\textbf{Codius}
+Minor improvements to Python sandboxing and documentation.
+
+\section{Relevant Courses}
+    \textbf{Independent Study in Computer Science}
+    \hfill Fall 2016 \\
+    \textbf{Mathematics of Big Data}
+    \hfill Fall 2016 \\
+    \textbf{Discrete Mathematics}
+    \hfill Spring 2016 \\
+    \textbf{Data Structures and Program Development}
+    \hfill Fall 2015
+
+\section{Other Activities and Awards}
+  National Forensics League Honor Society Outstanding Disctinction (2015), National Policy Debate Tournament of Champions (2014, 2015), East Bay Debate League Assistant Tournament Director (2013 - 2015), College Prep Computer Science Club Leader (2013 - 2015), National Latin Examination Summa Cum Laude (2014), National AP Scholar (2015), National Merit Commended Scholar (2014), International Mathematics and Verbal Talent Search High Honors (2010)
+
+\section{LinkedIn} For more information, see \url{https://www.linkedin.com/in/ehubinger}.
+
+%\section{Project Experience}
+    %\textbf{Project Title}
+    %\hfill \textbf{Dates -- You know the drill} \\
+    %\textit{Where you were when you did the project} \\
+    %Some sort of description goes here, preferably including
+    %\href{http://google.com}{links} of some sort.
+
+%\section{References}
+%\begin{tabular}[t]{@{}p{3.0in}p{3.0in}}
+%\textbf{Chris DeForeest}     & \textbf{Purujit Saha}  \\
+%Tech Lead: Dremel SRE        & Tech Lead: Dremel Dev  \\                           \email{cdeforeest@google.com}        & \email{purujit@google.com}     \\
+%\end{tabular}
+
+\end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% End CV Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------%
+% The following is copyright and licensing information for
+% redistribution of this LaTeX source code; it also includes a liability
+% statement. If this source code is not being redistributed to others,
+% it may be omitted. It has no effect on the function of the above code.
+%----------------------------------------------------------------------%
+% Copyright (c) 2007, 2008, 2009, 2010, 2011 by Theodore P. Pavlic
+% Some modifications made by Aaron Gable, 2011.
+% More modifications made my John Phillpot, 2015.
+%
+% Unless otherwise expressly stated, this work is licensed under the
+% Creative Commons Attribution-Noncommercial 3.0 United States License. To
+% view a copy of this license, visit
+% http://creativecommons.org/licenses/by-nc/3.0/us/ or send a letter to
+% Creative Commons, 171 Second Street, Suite 300, San Francisco,
+% California, 94105, USA.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+% OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+% MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+% IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+% CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+% TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+% SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+%----------------------------------------------------------------------%
