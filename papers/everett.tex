@@ -1,0 +1,287 @@
+\documentclass[12pt,letterpaper,aps,prd,longbibliography,twocolumn]{revtex4-1}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{lmodern}
+
+\newcommand{\m}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\tx}[1]{\text{#1}}
+\newcommand{\pn}[1]{\left(#1\right)}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\bk}[1]{\left[#1\right]}
+\newcommand{\abk}[1]{\left\langle#1\right\rangle}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\ellipsis}{\,\ldots}
+\newcommand{\given}{\,|\,}
+\newcommand{\mbf}[1]{\mathbf{#1}}
+\newcommand{\mbb}[1]{\mathbb{#1}}
+\newcommand{\impl}{\rightarrow}
+\newcommand{\dubimpl}{\leftrightarrow}
+
+\begin{document}
+
+\title{Multiple Worlds, One Universal Wave Function}
+\author{Evan Hubinger}
+\affiliation{Harvey Mudd College}
+
+\begin{abstract}
+We analyze the history of arguments for and against the Everett interpretation of quantum mechanics, from Everett's original paper to modern alternatives, and conclude that Everett's theory of the universal wave function is the most probable interpretation available. We provide a concise definition of the Everett interpretation based on the idea of accepting the physical reality of the wave function, and provide derivations of wave function collapse, random measurement, and the Born rule from that definition. We address concerns with the Everett interpretation's falsifiability and simplicity, and provide empirical and theoretical arguments for why the Everett interpretation is actually the simplest, most empirically-validated interpretation available. Finally, we analyze the alternatives of decoherence without Everett, consistent histories, and pilot wave theory, and find reasons to reject each one in favor of the Everett interpretation.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+In 1927, in the early days of quantum mechanics, Werner Heisenberg proposed the idea of ``wave function collapse'' to explain the apparent phenomenon of complex wave functions ``collapsing down'' into only a single eigenfunction.\cite{heisenberg} The original idea was that physics simply behaved differently at different length scales. When one measures a quantum system, the theory said, that system's complex superposition of states is reduced down to only a single eigenfunction---with probabilities following the squared amplitude, or Born, rule---from which point the system is governed by classical physics instead. This traditional interpretation of quantum mechanics is often referred to as the Copenhagen interpretation.
+
+From the very beginning, this idea was seriously suspect. Albert Einstein was famously displeased with its lack of determinism, saying ``God does not play dice,'' to which Niels Bohr famously responded, ``Einstein, stop telling God what to do.''\cite{solvay} As poetic as Bohr's answer is, Einstein---with his nearly magical physical intuition---was right to be concerned. Though Einstein favored a hidden variable interpretation\cite{epr}, which was later ruled out by Bell's theorem\cite{bell}, the Copenhagen interpretation nevertheless leaves open many questions. If the physical world is fundamentally random, how is the world we see selected from among the possibilities? If physics behaves differently at different length scales, what is the cutoff point? What qualifies as a wave-function-collapsing measurement? How can physics behave differently at different length scales, when macroscopic objects are made up of microscopic objects? How could one explain Chandrasekhar's insight in 1930 that modeling neutron stars required the entire star to be treated as a quantum system?\cite{townsend} Why is the observer not governed by the same laws of physics as the system being observed? Where do the Born probabilities come from?
+
+\section{The Everett Interpretation of Quantum Mechanics}
+\label{sec:everett}
+
+Enter the Everett Interpretation. In 1956, Hugh Everett III, then a doctoral candidate at Princeton, had an idea: if you could find a way to explain the phenomenon of measurement from within wave mechanics, you could do away with the extra postulate of wave function collapse, and thus many of the problems of the Copenhagen interpretation. Everett worked on this idea under thesis advisor and Einstein-prize-winning theoretical physicist John Wheeler, who would come to support his theory\cite{wheeler}, until 1957, when he finished his thesis, ``The Theory of the Universal Wave Function,''\cite{everett} published as the ```Relative State' Formulation of Quantum Mechanics.''\cite{relativestate} In his thesis, Everett succeeded in deriving every one of the strange quirks of the Copenhagen interpretation---wave function collapse, the apparent randomness of measurement, and even the Born rule---from purely wave mechanical grounds, as we will do in \autoref{sec:math}. Everett's derivation relied on what was at the time a controversial application of quantum mechanics, however: the existence of wave functions containing observers themselves. Everett believed that there was no reason to restrict the domain of quantum mechanics to only small, unobserved systems. Instead, Everett proposed that any system, even the system of the entire universe, could be encompassed in a single, albeit often intractable, ``universal wave function.''
+
+Modern formulations of the Everett interpretation reduce his reasoning down to two fundamental ideas:\cite{dewitt}\cite{falsification}\cite{bornproof2}
+\begin{enumerate}[1.]
+\item the wave function is \textit{physically real}, and
+\item the wave function obeys the standard, linear, deterministic Schrodinger wave equation (the relativistic variant, to be precise) \textit{at all times}.
+\end{enumerate}
+The Everett interpretation is precisely that which is implied by the two statements above. Specifically, the second statement precludes wave function collapse and demands that we continue to use the same wave mechanics for all systems, even those with observers, and the first statement demands that we accept the physical implications of doing so.
+
+Importantly, neither of the two fundamental ideas of the Everett interpretation are additional assumptions on top of traditional quantum theory---instead, they are simplifications of existing quantum theory, since they act only to remove the prior ad-hoc postulates of wave function collapse and the non-universal applicability of the wave equation.\cite{bornproof2}\cite{bornproof2summary} The beauty of the Everett interpretation is the fact that we can remove the postulates of the Copenhagen interpretation and still end up with a theory that works.
+
+\subsection{DeWitt's Multiple Worlds}
+
+Removing the Copenhagen postulates had some implications that did not mesh well with many physicists' existing physical intuitions. If one accepted Everett's universal wave function, one was forced to accept the idea that macroscopic objects---cats, people, planets, stars, galaxies, even the entire universe---could be in a superposition of many states, just as microscopic objects could. In other words, multiple different versions of the universe---multiple worlds, so to speak---could exist simultaneously. It was for this reason that Einstein-prize-winning physicist Bryce DeWitt, a supporter of the Everett interpretation, dubbed Everett's theory of the universal wave function the ``multiworld'' (or now more commonly ``multiple worlds'') interpretation of quantum mechanics.\cite{dewitt}
+
+While the idea of multiple worlds may seem strange, to Everett, it was simply an extension of the normal laws of quantum mechanics. Simultaneous superposition of states is something physicists already accept for microscopic systems whenever they do quantum mechanics---by virtue of the overwhelming empirical evidence in favor of it. Not only that, but evidence keeps coming out demonstrating superpositions at larger and larger length scales. In 1999 it was demonstrated, for example, that Carbon-60 molecules can be put into a superposition.\cite{buckyballs}. While it is unlikely that a superposition of such a macroscopic object as Schrodinger's cat will ever be conclusively demonstrated, due to the difficulty in isolating such a system from the outside world, it is likely that the trend of demonstrating superposition at larger and larger length scales will continue. It seems that to not accept that a cat could be in a superposition, even if we can never demonstrate it, however, is a failure of induction---a rejection of an empirically-demonstrated trend.
+
+While the Everett interpretation ended up implying the existence of multiple worlds, this was never Everett's starting point. The ``multiple worlds'' of the Everett interpretation were not added to traditional quantum mechanics as new postulates, but rather fell out from the act of \textit{taking away} the existing ad-hoc postulates of the Copenhagen interpretation---a consequence of \textit{taking the wave function seriously as a fundamental physical entity}. In Everett's own words, ``The aim is not to deny or contradict the conventional formulation of quantum theory, which has demonstrated its usefulness in an overwhelming variety of problems, but rather to supply a new, more general and complete formulation, from which the conventional interpretation can be \textit{deduced}.''\cite{relativestate} Thus, it is not surprising that Stephen Hawking and Nobel laureate Murray Gell-Mann, supporters of the Everett interpretation, have expressed reservations with the name ``multiple worlds interpretation,'' and thus we will continue to refer to the theory simply as the Everett interpretation instead.\cite{faq}
+
+\subsection{The Nature of Observation}
+
+Accepting the Everett interpretation raises an important question: if the macroscopic world can be in a superposition of multiple states, how do we know which one we are in? Stephen Hawking has the answer: ``in order to determine where one is in space-time one has to measure the metric and this act of measurement places one in one of the various different branches of the wave function in the Wheeler-Everett interpretation of quantum mechanics.''\cite{hawking} When we perform an observation on a system whose state is in a superposition of eigenfunctions, a version of us sees each different, possible eigenfunction. Which world we are in is simply determined by which eigenfunction we see.
+
+We can show this, as Everett did, just by acknowledging the existence of universal, joint system-observer wave functions.\cite{everett}\cite{relativestate} Before measuring the state of a system in a superposition, the observer and the system are independent---we can get their joint wave function simply by multiplying together their individual wave functions. After measurement, however, the two become entangled---that is, the state of the observer becomes dependent on the state of the system that was observed. The result is that for each eigenfunction in the system's superposition, the observer's wave function evolves differently. Thus, we can no longer express their joint wave function as the product of their individual wave functions. Instead, we are forced to express the joint wave function as a sum of different components, one for each possible eigenfunction of the system that could be observed. These different components are the different ``worlds'' of the Everett interpretation, with the only difference between them being which eigenfunction of the system was observed. We will formalize this reasoning in \autoref{sec:mwi}.
+
+We are still left with the question, however, of why, if every eigenfunction that can be observed is observed, we experience a particular probability of seeing one over another. Informally, we can think of the different worlds---the different possible observations---as being ``weighted'' by their squared amplitudes, and which one of the versions of us we are as a random choice from that weighted distribution. Formally, we can prove that under the Everett interpretation, where we use joint system-observer wave functions, if an observer interacts with many systems each in a superposition of multiple states, the observer will tend to see eigenfunctions distributed according to the Born rule.\cite{everett}\cite{relativestate}\cite{bornproof1}\cite{bornproof2}\cite{bornproof3}\cite{bornproof2summary} A portion of Everett's proof of this fact is included in \autoref{sec:born}.
+
+\section{The Mathematics of the Everett Interpretation}
+\label{sec:math}
+
+Previously, we asserted that universally-applied wave mechanics was sufficient, without ad-hoc postulates such as wave function collapse, to imply all the oddities of the Copenhagen interpretation. We will now prove that assertion. In this section, as per the Everett interpretation, we will assume that basic wave mechanics is obeyed for all physical systems, including those containing observers. From that assumption, we will show that the apparent phenomena of wave function collapse, random measurement, and the Born Rule, follow. The proofs given below are adopted from Everett's original paper.\cite{everett}\cite{relativestate}
+
+\subsection{The Apparent Collapse of The Wave Function}
+\label{sec:mwi}
+
+Suppose we have a system $S$ with eigenfunctions $\set{\phi_i}$ and initial state $\phi = \sum_i a_i \phi_i$. Consider an observer $O$ with initial state $\psi$. Let $\psi_{i,j,\ldots}$ be the state of $O$ after observing eigenfunctions $\phi_i, \phi_j, \ldots$ of $S$, and to allow for these observations to be repeatable, we will assume that the state $\phi_i$ of $S$ remains unchanged after observation.
+
+Since we are working under the Everett interpretation, we will let ourselves define a joint system-observer wave function $\Psi$ with initial configuration
+\[
+    \Psi_0 = \psi \phi = \psi \sum_i a_i \phi_i
+\]
+Then, our goal is to understand out what happens to $\Psi$ when $O$ repeatedly observes $S$. Thus, we will define $\Psi_n$ to represent the state of $\Psi$ after $n \in \mbb N$ independent observations of $S$ are performed by $O$.
+
+Consider the simple case where $\phi = \phi_0$ and thus we are in initial state $\Psi_0 = \psi \phi_0$. In this case, by our previous definition of $\psi_i$ and requirement that $\phi_i$ remain unchanged, we can write the state after the observation as $\Psi_1 = \psi_0 \phi_0$. Since quantum mechanics is linear, and the eigenfunctions $\phi_i$ are orthogonal, it must be that this same process occurs for each $\phi_i$.
+
+Thus, by the principle of superposition, we can write $\Psi_1$ in its general form as
+\[
+    \Psi_1 = \sum_i a_i \psi_i \phi_i
+\]
+which, applying the same principle again to it, allows us to write $\Psi_2$ as
+\[
+    \Psi_2 = \sum_i a_i \psi_{i,i} \phi_i
+\]
+where each $\psi_i$ once again sees the same $\phi_i$, since it has not changed state. As previously defined, we use the notation $\psi_{i,i}$ to denote the state of $O$ after observing eigenfunctions $\phi_i, \phi_i$ of $S$. Thus, more generally, we can write $\Psi_n$ as
+\[
+    \Psi_n = \sum_i a_i \psi_{i,i,\ldots,i} \phi_i
+\]
+where $i$ is repeated $n$ times in $i,i,\ldots,i$.
+
+Thus, once a measurement of $S$ has been performed, every subsequent measurement will see the same eigenfunction, even though all eigenfunctions continue to exist. We can see this from the fact that the same $i$ is repeated in each state $\psi_{i,i,\ldots,i}$ of $O$. In this way, we see how despite the fact that the original wave function $\phi = \sum_i a_i \phi_i$ for $S$ is in a superposition of many eigenfunctions, once a measurement has been performed, each subsequent measurement will always see the same eigenfunction.
+
+Note that there is no longer a single, independent state $\psi$ of $O$. Instead, there are many $\psi_{i,i,\ldots,i}$, one for each eigenfunction. What does that mean? It means that for every eigenfunction $\phi_i$ of $S$, there is a corresponding state $\psi_{i,i,\ldots,i}$ of $O$ wherein $O$ sees that eigenfunction. Thus, one is required to accept that there are many observers $O_i$, with corresponding state $\psi_{i,i,\ldots,i}$, each one seeing a different eigenfunction $\phi_i$. This is the origin of the Everett interpretation's ``multiple worlds.''
+
+From the perspective of each $O_i$ in this scenario it will appear as if $\phi$ has ``collapsed'' from a complex superposition $\sum_i a_i \phi_i$ into a single eigenfunction $\phi_i$. As we can see from the joint wave function, however, that is not the case---in fact, the entire superposition still exists---what has changed is only that $\psi$, the state of $O$, is no longer independent of that superposition, and has instead become entangled with it.
+
+\subsection{The Apparent Randomness of Measurement}
+
+Suppose we now have many such systems $S$, which we will denote $S_n$ where $n \in \mbb N$. Consider $O$ from before, but with the modification that instead of repeatedly observing a single $S$, $O$ observes different $S_n$ in each measurement, such that $\Psi_n$ is the joint system-observer wave function after measuring the $n$th $S_n$.
+
+As before, we will define the initial joint wave function $\Psi_0$ as
+\begin{align*}
+    \Psi_0 = \psi \sum_{i_1, i_2, \ldots, i_n}\big( & a_{i_1, i_2, \ldots, i_n} \\
+    & \phi_{i_1}(x_1) \phi_{i_2}(x_2) \cdots \phi_{i_n}(x_n) \big)
+\end{align*}
+where we are summing over all possible combinations of eigenfunctions for the different systems $S_n$ with arbitrary coefficients $a_{i_1, i_2, \ldots, i_n}$ for each combination.
+
+Then, as before, we can use the principle of superposition to find $\Psi_1$ as
+\begin{align*}
+    \Psi_1 = \sum_{i_1, i_2, \ldots, i_n}\big( & \psi_{i_1} a_{i_1, i_2, \ldots, i_n} \\
+    & \phi_{i_1}(x_1) \phi_{i_2}(x_2) \cdots \phi_{i_n}(x_n) \big)
+\end{align*}
+since the first measurement will see the state $\phi_{i_1}$ of $S_1$. More generally, we can write $\Psi_n$ as
+\begin{align*}
+    \Psi_n = \sum_{i_1, i_2, \ldots, i_n}\big( & \psi_{i_1, i_2, \ldots, i_n} a_{i_1, i_2, \ldots, i_n} \\
+    & \phi_{i_1}(x_1) \phi_{i_2}(x_2) \cdots \phi_{i_n}(x_n) \big)
+\end{align*}
+following the same principle, as each measurement of an $S_n$ will see the corresponding state $\phi_{i_n}$.
+
+Thus, when subsequent measurements of identical systems $S_n$ are performed, the resulting sequence of eigenfunctions observed by $O$ in each $\psi$ appear random (according to what distribution we will show in the next subsection), since there is no structure to the sequences $i_1, i_2, \ldots, i_n$. This appearance of randomness is true even though the entire process is completely deterministic. If, alternatively, $O$ was to return to a previously-measured $S_n$, we would get a repeat of the first analysis, wherein $O$ would always see the same state as was previously measured.
+
+\subsection{The Born Probability Rule}
+\label{sec:born}
+
+As before, consider a system $S$ in state $\sum_i a_i \phi_i$. To be able to talk about a probability for an observer $O$ to see state $\phi_i$, we need some function $P(a_i)$ that will serve as a measure of that probability.
+
+Since we know that quantum mechanics is invariant up to an overall phase, we will impose the condition on $P$ that it must satisfy the equation
+\[
+    P(a_i) = P\pn{\sqrt{a_i^* a_i}} = P(\abs{a_i})
+\]
+Furthermore, by the linearity of quantum mechanics, we will impose the condition on $P$ such that for $a \phi$ defined as
+\[
+    a \phi = \sum_i a_i \phi_i
+\]
+$P$ must satisfy the equation
+\[
+    P(a) = \sum_i P(a_i)
+\]
+
+Together, these two conditions fully specify what function $P$ must be. Assuming $\phi$ is normalized, such that $\sum_i \phi_i^* \phi_i = 1$, it must be that
+\[
+    a^* a = \sum_i a_i^* a_i
+\]
+or equivalently
+\[
+    \abs{a} = \sqrt{\sum_i \abs{a_i}^2}
+\]
+such that
+\[
+    P(\abs{a}) = P\pn{\sqrt{\sum_i \abs{a_i}^2}}
+\]
+then, imposing the phase invariance condition that $P(\abs{a}) = P(a)$, we get
+\[
+    P(a) = P\pn{\sqrt{\sum_i \abs{a_i}^2}}
+\]
+and from the linearity condition, we have
+\[
+    P(a) = \sum_i P(a_i)
+\]
+which, by the phase invariance condition, is equivalent to
+\[
+    P(a) = \sum_i P\pn{\sqrt{\abs{a_i}^2}}
+\]
+thus, putting it all together, we get
+\[
+    P(a) = P\pn{\sqrt{\sum_i \abs{a_i}^2}} = \sum_i P\pn{\sqrt{\abs{a_i}^2}}
+\]
+Now, define a new function $g(x) = P(\sqrt{x})$, such that
+\[
+    g\pn{\sum_i \abs{a_i}^2} = \sum_i g\pn{\abs{a_i}^2}
+\]
+which implies that $g$ must be a linear function such that for some constant $c$
+\[
+    g(x) = c x
+\]
+and thus since $P(x) = g(x^2)$,
+\[
+    P(x) = c x^2
+\]
+which, imposing the phase invariance condition, becomes
+\[
+    P(x) = c \abs{x}^2
+\]
+which, where $c$ is normalized to 1, is the Born rule.
+
+The fact that this measure does in fact behave as a probability, beyond the fact that it is the only measure that can, is deserving of further proof. The concept of probability is notoriously hard to define, however, and without a definition of probability, it is just as meaningful to call $P$ the ``stallion'' of the wave function as the ``probability.'' Nevertheless, such proofs have been provided for nearly every reasonable theory of probability that exists. Everett provided a proof based on the standard frequentist definition of probability\cite{everett}\cite{relativestate}, David Deutsch (Oxford theoretical physicist) has provided a proof based on game theory\cite{bornproof1}, and David Wallace (USC theoretical physicist) has provided a proof based on decision theory\cite{bornproof2}. For any reasonable definition of probability, the Everett interpretation is able to show that the above measure meets it without any additional postulates.\cite{bornproof3}\cite{bornproof2summary}\cite{chris}
+
+\section{A Theoretical Defense of the Everett Interpretation}
+
+\noindent ``The mathematical formalism of the quantum theory is capable of yielding its own interpretation.''\cite{dewitt} -- Bryce DeWitt, 1970
+
+\subsection{Falsifiability and Empiricism}
+
+Perhaps the most common criticism of the Everett interpretation is the claim that it is not falsifiable, and thus falls outside the realm of empirical science.\cite{carolltestable} In fact, this claim is simply not true---many different methods for testing the Everett interpretation have been proposed, and, much empirical data regarding the Everett interpretation is already available.
+
+One such method we have already discussed: the Everett interpretation removes the Copenhagen interpretation's postulate that the wave function must collapse at a particular length scale. Were it ever to be conclusively demonstrated that superposition was impossible past some point, the Everett interpretation would be disproved. Thus, the demonstrations that have been performed of superposition continuing to appear at larger and larger length scales---such as for Carbon 60 as was previously mentioned\cite{buckyballs}---are evidence in favor of the Everett interpretation. Arguably, it is the Copenhagen interpretation which is unfalsifiable, since it makes no claim about where the boundary lies at which wave function collapse occurs, and thus proponents can respond to the evidence of larger superpositions simply by changing their theory and moving their proposed boundary up.
+
+Another method of falsification regards the interaction between the Everett interpretation and quantum gravity. The Everett interpretation makes a definitive prediction that gravity must be quantized. Were gravity not quantized---not wrapped up in the wave function like all the other forces---and instead simply a background metric for the entire wave function, we would be able to detect the gravitational impact of the other states we were in a superposition with. Thus, if it were to be conclusively demonstrated that a quantum mechanical description of gravitation were impossible, the Everett interpretation would be disproved.\cite{falsification}\cite{hartle} In 1957, Richard Feynman, who would later come to explicitly support the Everett interpretation\cite{faq} as well as become a Nobel laureate, presented an early version of the above argument as a reason to believe in quantum gravity, arguing, ``There is a bare possibility (which I shouldn't mention!) that quantum mechanics fails and becomes classical again when the amplification gets far enough [but] if you believe in quantum mechanics up to any level then you have to believe in gravitational quantization.''\cite{feynman}
+
+Another proposal concerns differing probabilities of finding ourselves in the universe we are in depending on whether the Everett interpretation holds or not. If the Everett interpretation is false, and the universe only has a single state, there is only one state for us to find ourselves in, and thus we would expect to find ourselves in an approximately random universe. On the other hand, if the Everett interpretation is true, and there are many different states that the universe is in, we could find ourselves in any of them, and thus we would expect to find ourselves in one which was more disposed than average towards our own existence. Approximate calculations of the relative probability of the observed universe based on the Hartle-Hawking boundary condition strongly support the Everett interpretation.\cite{falsification}
+
+Finally, as we made a point of being clear about in \autoref{sec:everett}, the Everett interpretation is simply a consequence of \textit{taking the wave function seriously as a physical entity}. Thus, it is somewhat unfair to ask the Everett interpretation to achieve falsifiability independently of the theory---quantum mechanics---which implies it.\cite{carolltestable} It is thus all the more impressive---and tantamount to its importance to that theory---that it manages to do so regardless. If a serious problem with quantum mechanics were ever to be demonstrated, however---one which completely replaced the wave function as a fundamental entity---it would disprove the Everett interpretation. Furthermore, to the extent that one has confidence in the universal applicability of the principles of quantum mechanics, one should have equal confidence in the Everett interpretation, since it is a logical consequence, as was shown in \autoref{sec:mwi}.
+
+\subsection{Simplicity}
+\label{sec:simp}
+
+Another common objection to the Everett interpretation is that it ``postulates too many universes,'' which Sean Carroll, a Caltech cosmologist and supporter of the Everett interpretation, calls ``the basic silly objection.''\cite{carroll} At this point, it should be very clear why this objection is silly: the Everett interpretation postulates no such thing---the existence of ``many universes'' is an \textit{implication}, not a \textit{postulate}, of the theory. Opponents of the Everett interpretation, however, have accused it of a lack of simplicity on the grounds that adding in all those additional universes is unnecessary added complexity, and that by the principle of Occam's razor that the simplest explanation is probably correct, the Everett interpretation can be rejected.\cite{badoccam}
+
+In fact, Occam's razor is an incredibly strong argument in favor of the Everett interpretation. To explain this, we will first need to formalize what we mean by Occam's razor, which will require some measure of theoretical computer science. Specifically, we will make use of Solomonoff's theory of inductive inference (sometimes also known by the name of the equivalent formalism Kolmogorov complexity), the best, most general framework we have for comparing the \textit{a priori} probability of physical theories.\cite{solomonoff}\cite{occam}\cite{lesswrongsolomonoff} To use Solomonoff's formalism, only one assumption is required of us: under some encoding scheme, competing theories of the universe can be modeled as programs (specifically Turing machines). This assumption does not imply that the universe must be computable, only that it can be computably described, which all physical theories capable of being written down must abide by. From this assumption, and the axioms of probability theory, Solomonoff induction can be derived.\cite{solomonoff}
+
+Solomonoff induction tells us that, if we have a set of (Turing machine) programs $\set{T_i}$ which encode for empirically indistinguishable physical theories, the \textit{a priori} probability $\mbb P$ of the theory described by a given program $T_i$ with length in bits (0s and 1s) $\abs{T_i}$ is given by
+\[
+    \mbb P(T_i) \sim 2^{-\abs{T_i}}
+\]
+up to a constant normalization factor calculated across all the $\set{T_i}$ to make the probabilities sum to 1.\cite{solomonoff} We can see how this makes intuitive sense, since if we are predicting an arbitrary system, and thus have no information about the correctness of a program implementing a theory other than its length in bits, we are forced to assign equal probability to each of the two options for each bit, 0 and 1, and thus each additional bit adds a factor of $\frac{1}{2}$ to the total probability of the program. Furthermore, we can see how Solomonoff induction serves as a formalization of Occam's razor, since it gives us a way of calculating how much to discount longer, more complex theories in favor of shorter, simpler ones.
+
+Now, we will attempt to apply this formalism to assign probabilities to competing interpretations of quantum mechanics, which we will represent as elements of the set $\set{T_i}$. Let $W$ be the shortest program which computes the wave equation. Since the wave equation is a component of all quantum theories, it must be that $\abs{W} \leq \abs{T_i}$. Thus, the smallest that any $T_i$ could possibly be is $\abs{W}$, such that any $T_i$ of length $\abs{W}$ is at least twice as probable as a $T_i$ of any other length. The Everett interpretation is such a $T_i$, since it requires nothing else beyond wave mechanics, and follows directly from it. Therefore, from the perspective of Solomonoff induction, the Everett interpretation is provably optimal in terms of program length, and thus also in terms of probability.
+
+To get a sense of the magnitude of these effects, we will attempt to approximate how much less probable the Copenhagen interpretation is than the Everett interpretation. We will represent the Copenhagen interpretation $C$ as made of three parts: $W$, wave mechanics; $O$, a machine which determines when to collapse the wave function; and $L$, classical mechanics. Then, where the Everett interpretation $E$ is just $W$, we can write their relative probabilities as
+\[
+    \frac{\mbb P(C)}{\mbb P(E)} = \frac{2^{-\abs W-\abs O-\abs L}}{2^{-\abs W}} = 2^{-\abs O-\abs L}
+\]
+How large are $O$ and $L$? As a quick Fermi estimate for $L$, we will take Newton's three laws of motion, Einstein's general relativistic field equation, and Maxwell's four equations of electromagnetism as the principles of classical mechanics, for a total of 8 fundamental equations. Assume the minimal implementation for each one averages 100 bits---a very modest estimate, considering the smallest Chess program ever written is 3896 bits long.\cite{chess} Then, the relative probability is at most
+\[
+    \frac{\mbb P(C)}{\mbb P(E)} = 2^{-\abs O-\abs L} < 2^{-\abs L} \approx 2^{-800} \approx 2 \cdot 10^{-241}
+\]
+which is about the probability of picking four random atoms in the universe and getting the same one each time, and is thus so small as to be trivially dismissible.
+
+\subsection{The Arrow of Time}
+\label{sec:time}
+
+The Schrodinger equation is time-reversal invariant, or more technically, charge-parity-time-reversal (CPT) invariant. Since the Everett interpretation says the wave function is always obeyed, it shares this property. The Copenhagen interpretation, however, does not, since wave function collapse is a fundamentally irreversible event.\cite{time} In fact, CPT symmetry is not the only natural property that wave function collapse lacks that the Schrodinger equation has---wave function collapse breaks linearity, unitarity, differentiability, locality, and determinism.\cite{faq}\cite{lesswrongcollapse} The Everett interpretation, by virtue of consisting of nothing but the Schrodinger equation, preserves all of these properties. This is an argument in favor of the Everett interpretation, since there are strong theoretical and empirical reasons to believe that such symmetries are properties of the universe.\cite{quantumviolation}\cite{cptsym}\cite{linearity}\cite{townsend}
+
+Nevertheless, it has been argued that the Copenhagen interpretation's breaking of CPT symmetry is actually a point in its favor, since it supposedly explains the arrow of time, the idea that time does not behave symmetrically in our everyday experience.\cite{time} Unfortunately for the Copenhagen interpretation, wave function collapse does not actually imply any of the desired thermodynamic properties of the arrow of time.\cite{time} Furthermore, under the Everett interpretation, the arrow of time can be explained using the standard thermodynamic explanation that the universe started in a very low-entropy state.\cite{arrowoftime}
+
+In fact, accepting the Everett interpretation gets rid of the need for the current state of the universe to be dependent on subtle initial variations in that low-entropy state.\cite{arrowoftime} Instead, the current state of the universe is simply one of the many different components of the wave function that evolved deterministically from that initial state. Thus, the Everett interpretation is even simpler---from a Solomonoff perspective---than was shown in \autoref{sec:simp}, since it forgoes the need for its program (Turing machine) to specify a complex initial condition for the universe with many subtle variations.
+
+\section{Other Interpretations of Quantum Mechanics}
+
+\noindent ``Despite the unrivaled empirical success of quantum theory, the very suggestion that it may be \textit{literally true as a description of nature} is still greeted with cynicism, incomprehension, and even anger.''\cite{everetttaboo} -- David Deutsch, 1996
+
+\subsection{Decoherence}
+
+It is sometimes proposed that wave mechanics alone is sufficient to explain the apparent phenomenon of wave function collapse without the need for the Everett interpretation's multiple worlds. The justification for this assertion is usually based on the idea of decoherence. Decoherence is the mathematical result, following from the wave equation, that tightly-interacting superpositions tend to evolve into non-interacting superpositions.\cite{zurek}\cite{decoherence} Importantly, decoherence does not destroy the superposition---it merely ``diagonalizes'' it, which is to say, it removes the interaction terms. After decoherence, one is always still left with a superposition of multiple states.\cite{stanford}\cite{wallacedecoherence} The only way to remove the resulting superposition is to assume wave function collapse, which every statistical theory claiming to do away with multiple worlds has been shown to implicitly assume.\cite{zehdecoherence}\cite{bornproof3} There is no escaping the logic presented in \autoref{sec:mwi}---if one accepts the universal applicability of the wave function, one must accept the multiple worlds it implies.
+
+That is not to say that decoherence is not an incredibly valuable, useful concept for the interpretation of quantum mechanics, however. In the Everett interpretation, decoherence serves the very important role of ensuring that macroscopic superpositions---the multiple worlds of the Everett interpretation---are non-interacting, and that each one thus behaves approximately classically.\cite{zehdecoherence}\cite{wallacedecoherence} Thus, the simplest decoherence-based interpretation of quantum mechanics is in fact the Everett interpretation. From the Stanford Encyclopedia of Philosophy, ``Decoherence as such does not provide a solution to the measurement problem, at least not unless it is combined with an appropriate interpretation of the theory [and it has been suggested that] decoherence is most naturally understood in terms of Everett-like interpretations.''\cite{stanford} The discoverer of decoherence himself, German theoretical physicist Heinz-Dieter Zeh, is an ardent proponent of the Everett interpretation.\cite{zehbohm}\cite{arrowoftime}
+
+Furthermore, we have given general arguments in favor of the existence of the multiple worlds implied by the Everett interpretation, which are all reasons to favor the Everett interpretation over any theory that does not include its multiple worlds. Specifically, calculations of the probability of the current state of the universe support the Everett interpretation\cite{falsification}, as does the fact that the Everett interpretation allows for the initial state of the universe to be simpler\cite{arrowoftime}, as we argued in \autoref{sec:time}.
+
+\subsection{Consistent Histories}
+
+The consistent histories interpretation of quantum mechanics, owing primarily to Robert Griffiths, eschews probabilities over ``measurement'' in favor of probabilities over ``histories,'' which are defined as arbitrary sequences of events.\cite{griffiths} Consistent histories provides a way of formalizing what classical probabilistic questions make sense in a quantum domain and which do not---that is, which are consistent. Its explanation for why this consistency always appears at large length scales is based on the idea of decoherence, as discussed above.\cite{griffiths}\cite{gellmann} In this context, consistent histories is a very useful tool for reasoning about probabilities in the context of quantum mechanics, and for providing yet another proof of the natural origin of the Born rule.
+
+Proponents of consistent histories claim that it does not imply the multiple worlds of the Everett interpretation.\cite{griffiths} However, since the theory is based on decoherence, there are always multiple different consistent histories, which cannot be removed via any natural history selection criterion.\cite{setselection}\cite{gellmann} Thus, just as the wave equation implies the Everett interpretation, so too does consistent histories. To see this, we will consider the fact that consistent histories works because of Feynmann's observation that the amplitude of any given final state can be calculated as the sum of the amplitudes along all the possible paths to that state.\cite{gellmann}\cite{pathintegral} Importantly, we know that two different histories---for example, the different branches of a Mach-Zender interferometer---can diverge and then later merge back together and interfere with each other. Thus, it is not in general possible to describe the state of the universe as a \textit{single} history, since the existence of other, parallel histories---such as the other branch of the Mach-Zender interferometer---can interfere and change how that state will later evolve. Thus, a history is great for describing how a state came to be, but not very useful for describing how it might evolve in the future. For that, including the other parallel histories---the full superposition---is necessary.
+
+Once one accepts that the existence of multiple histories is necessary on a microscopic level, their existence on a macroscopic level follows---excluding them would require an extra postulate, which would make consistent histories equivalent to the Copenhagen interpretation. If such an extra postulate is not made, then the result is macroscopic superposition, which is to say, the Everett interpretation. This formulation of consistent histories without any extra postulates has been called the theory of ``the universal path integral,'' exactly mirroring Everett's theory of the universal wave function.\cite{pathintegral} The theory of the universal wave function---the Everett interpretation---is to the theory of the universal path integral as wave mechanics is to the sum-over-paths approach, which is to say that they are both equivalent formalisms with the same implications.
+
+\subsection{Pilot Wave Theory}
+
+The pilot wave interpretation, otherwise known as the de Broglie-Bohm interpretation, postulates that the wave function, rather than being physically real, is a background which ``guides'' otherwise classical particles.\cite{bohm} As we saw with the Copenhagen interpretation, the obvious question to ask of the pilot wave interpretation is whether its extra postulate---in this case adding in classical particles---is necessary or useful in any way. The answer to this question is a definitive no. Heinz-Dieter Zeh, discoverer of decoherence, says of the pilot wave interpretation, ``Bohm's pilot wave theory is successful only because it keeps Schrodinger's (exact) wave mechanics unchanged, while the rest of it is observationally meaningless and solely based on classical prejudice.''\cite{zehbohm} As we have previously shown in \autoref{sec:math}, wave mechanics is capable of solving all supposed problems of measurement without the need for any additional postulates. While it is true that pilot wave theory solves all these problems as well, it does so \textit{not by virtue of its classical add-ons}, but simply \textit{by virtue of including the entirety of wave mechanics}.\cite{zehbohm}\cite{wallacebohm}
+
+Furthermore, since pilot wave theory has no collapse postulate, it does not even get rid of the existence of multiple words---in the words of Heinz-Dieter Zeh, ``Bohm's theory contains the same `many worlds' of dynamically separate branches as the Everett interpretation (now regarded as `empty' wave components), since it is based on precisely the same (`absolutely real') global wave function.''\cite{zehbohm} However, since the extra classical particles only exist in one of these worlds, the pilot wave interpretation also does not resolve the problem of the low likelihood of the observed state of the universe\cite{falsification} or the complexity of the required initial condition\cite{arrowoftime}. Thus, the pilot wave interpretation, despite being strictly more complicated than the Everett interpretation---both in terms of its extra postulate and the concerns above---produces exactly no additional explanatory power. Therefore, we can safely dismiss the pilot wave interpretation on the grounds of the same simplicity argument used against the Copenhagen interpretation in \autoref{sec:simp}.
+
+\section{Conclusion}
+
+Harvard theoretical physicist Sidney Coleman uses the following parable from Wittgenstein as an analogy for the interpretation of quantum mechanics:\cite{inyourface} ``Tell me,'' Wittgenstein asked a friend, ``why do people always say, it was natural for man to assume that the sun went round the earth rather than that the earth was rotating?'' His friend replied, ``Well, obviously because it just looks as though the Sun is going round the Earth.'' Wittgenstein replied, ``Well, what would it have looked like if it had looked as though the Earth was rotating?'' Of course, the answer is \textit{it would have looked exactly as it actually does}! To our fallible human intuition, it seems as if we see the sun rotating around the earth, despite the fact that what we are actually seeing is a heliocentric solar system. Similarly, it seems as if we are seeing the wave function randomly collapsing around us, despite the fact that this phenomenon is \textit{entirely explained just from the wave equation}, which we already know empirically is a law of nature.
+
+It is perhaps unfortunate that the Everett interpretation ended up implying the existence of multiple worlds, since this fact has led to many incorrectly viewing the Everett interpretation as a fanciful theory of alternative realities, rather than the best, simplest theory we have as of yet for explaining measurement in quantum mechanics. The Everett interpretation's greatest virtue is the fact that it is barely even an interpretation of quantum mechanics, holding as its most fundamental principle that the wave equation can interpret itself. In the words of David Wallace: ``If I were to pick one theme as central to the tangled development of the Everett interpretation of quantum mechanics, it would probably be: the formalism is to be left alone. What distinguished Everett’s original paper both from the Dirac-von Neumann collapse-of-the-wavefunction orthodoxy and from contemporary rivals such as the de Broglie-Bohm theory was its insistence that unitary quantum mechanics need not be supplemented in any way (whether by hidden variables, by new dynamical processes, or whatever).''\cite{bornproof2}
+
+There is a movement within physics writ large that seeks to describe the Everett interpretation simply as one possible answer to the measurement problem. It should hopefully be clear at this point why that view should be rejected---the Everett interpretation is not simply yet another solution to the measurement problem, but rather a \textit{straightforward conclusion of quantum mechanics itself} that shows that \textit{the measurement problem should never have been a problem in the first place}. Without the Everett interpretation, one is forced to needlessly introduce complex, symmetry-breaking, empirically-unjustifiable postulates---either wave function collapse or pilot wave theory---just to explain what was \textit{already explicable} under basic wave mechanics. The Everett interpretation is not just another possible way of interpreting quantum mechanics, but a necessary component of any quantum theory that wishes to explain the phenomena of measurement in a natural way. In the words of John Wheeler, Everett's thesis advisor, ``No escape seems possible from [Everett's] relative state formulation if one wants to have a complete mathematical model for the quantum mechanics that is internal to an isolated system. Apart from Everett's concept of relative states, no self-consistent system of ideas [fully explains the universe].''\cite{wheeler}
+
+\bibliography{everettNotes,everett_sources}
+
+\end{document}
