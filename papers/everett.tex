@@ -1,14 +1,31 @@
-\documentclass[12pt,letterpaper,aps,prd,longbibliography,twocolumn,nofootinbib]{revtex4-1}
-\usepackage{amsmath,amssymb,amsfonts}
+\documentclass[
+    12pt,
+    letterpaper,
+    aps,
+    prd,
+    longbibliography,
+    twocolumn,
+    nofootinbib,
+    raggedbottom,
+    amsmath,
+    amssymb,
+    amsfonts,
+]{revtex4-1}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{graphicx}
-\usepackage{enumerate}
-\usepackage{hyperref}
 \usepackage{lmodern}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{hyperref}
 \usepackage{epigraph}
 
-\usepackage[margin=.845in]{geometry}
+\let\origfootnote\footnote
+\renewcommand{\footnote}[1]{%
+   \begingroup%
+   \renewcommand{\footnotesize}{\fontsize{10pt}{8pt}\selectfont}%
+   \origfootnote{#1}%
+   \endgroup%
+}
 
 \newcommand{\m}[1]{\begin{bmatrix}#1\end{bmatrix}}
 \newcommand{\tx}[1]{\text{#1}}
@@ -25,14 +42,6 @@
 \newcommand{\impl}{\rightarrow}
 \newcommand{\dubimpl}{\leftrightarrow}
 
-\let\origfootnote\footnote
-\renewcommand{\footnote}[1]{%
-   \begingroup%
-   \renewcommand{\footnotesize}{\fontsize{10pt}{8pt}\selectfont}%
-   \origfootnote{#1}%
-   \endgroup%
-}
-
 \begin{document}
 
 \title{Multiple Worlds, One Universal Wave Function}
@@ -41,8 +50,7 @@
 \date{\today}
 
 \begin{abstract}
-
-We seek to present and defend the view that the interpretation of quantum mechanics is no more complicated than Einstein's interpretation of General Relativity: ``The theory is correct.''\cite{famousquotes} The view which holds that the mathematical formalism of quantum mechanics---without any additional postulates---is a complete description of reality is known as the Everett interpretation. We seek to defend the Everett interpretation of quantum mechanics as the most probable interpretation available. To accomplish this task, we analyze the history of the Everett interpretation, provide mathematical backing for its assertions, respond to criticisms that have been leveled against it, and compare it to its modern alternatives.
+We seek to present and defend the view that the interpretation of quantum mechanics is no more complicated than the interpretation of plate tectonics: that which is being studied is real, and that which the theory predicts is true. The view which holds that the mathematical formalism of quantum mechanics---without any additional postulates---is a complete description of reality is known as the Everett interpretation. We seek to defend the Everett interpretation of quantum mechanics as the most probable interpretation available. To accomplish this task, we analyze the history of the Everett interpretation, provide mathematical backing for its assertions, respond to criticisms that have been leveled against it, and compare it to its modern alternatives.
 \end{abstract}
 
 \maketitle
@@ -88,14 +96,12 @@ We are still left with the question, however, of why we experience a particular 
 \section{The Mathematics of the Everett Interpretation}
 \label{sec:math}
 
-Previously, we asserted that universally-applied wave mechanics was sufficient, without ad-hoc postulates such as wave function collapse, to imply all the oddities of the Copenhagen interpretation. We will now prove that assertion. In this section, as per the Everett interpretation, we will assume that basic wave mechanics is obeyed for all physical systems, including those containing observers. From that assumption, we will show that the apparent phenomena of wave function collapse, random measurement, and the Born Rule, follow. The proofs given below are adopted from Everett's original paper.\cite{everett}\cite{relativestate}
+Previously, we asserted that universally-applied wave mechanics was sufficient, without ad-hoc postulates such as wave function collapse, to imply all the oddities of the Copenhagen interpretation. We will now prove that assertion. In this section, as per the Everett interpretation, we will accept that basic wave mechanics is obeyed for all physical systems, including those containing observers. From that assumption, we will show that the apparent phenomena of wave function collapse, random measurement, and the Born Rule, follow. The proofs given below are adopted from Everett's original paper.\cite{everett}\cite{relativestate}
 
 \subsection{The Apparent Collapse of The Wave Function}
 \label{sec:mwi}
 
-Suppose we have a system $S$ with eigenfunctions $\set{\phi_i}$ and initial state $\phi = \sum_i a_i \phi_i$. Consider an observer $O$ with initial state $\psi$. Let $\psi_{i,j,\ldots}$ be the state of $O$ after observing eigenfunctions $\phi_i, \phi_j, \ldots$ of $S$, and to allow for these observations to be repeatable, we will assume that the states $\phi_i$ of $S$ remains unchanged after observation.
-
-Since we are working under the Everett interpretation, we will let ourselves define a joint system-observer wave function $\Psi$ with initial configuration
+Suppose we have a system $S$ with eigenfunctions $\set{\phi_i}$ and initial state $\phi = \sum_i a_i \phi_i$. Consider an observer $O$ with initial state $\psi$. Let $\psi_{i,j,\ldots}$ be the state of $O$ after observing eigenfunctions $\phi_i, \phi_j, \ldots$ of $S$. Since we would like to demonstrate how repeated measurements see a collapsed wave function, we will assume that repeated measurement is possible, and thus that the states $\phi_i$ of $S$ remain unchanged after observation. As we are working under the Everett interpretation, we will let ourselves define a joint system-observer wave function $\Psi$ with initial configuration
 \[
     \Psi_0 = \psi \phi = \psi \sum_i a_i \phi_i
 \]
@@ -212,7 +218,7 @@ which, imposing the phase invariance condition, becomes
 \]
 which, where $c$ is normalized to 1, is the Born rule.
 
-The fact that this measure is a probability, beyond that it is the only measure that can be, is deserving of further proof. The concept of probability is notoriously hard to define, however, and without a definition of probability, it is just as meaningful to call $P$ something as arbitrary as the ``stallion'' of the wave function than the ``probability.'' Nevertheless, for nearly every reasonable probability theory that exists, such proofs have been provided. Everett provided a proof based on the standard frequentist definition of probability\cite{everett}\cite{relativestate}, David Deutsch (Oxford theoretical physicist) has provided a proof based on game theory\cite{bornproof1}, and David Wallace (USC theoretical physicist) has provided a proof based on decision theory\cite{bornproof2}. For any reasonable definition of probability, the Everett interpretation is able to show that the above measure satisfies it without any additional postulates.\cite{bornproof3}\cite{bornproof2summary}\cite{chris}
+The fact that this measure is a probability, beyond that it is the only measure that can be, is deserving of further proof. The concept of probability is notoriously hard to define, however, and without a definition of probability, it is just as meaningful to call $P$ something as arbitrary as the ``stallion'' of the wave function as the ``probability.'' Nevertheless, for nearly every reasonable probability theory that exists, such proofs have been provided. Everett provided a proof based on the standard frequentist definition of probability\cite{everett}\cite{relativestate}, David Deutsch (Oxford theoretical physicist) has provided a proof based on game theory\cite{bornproof1}, and David Wallace (USC theoretical physicist) has provided a proof based on decision theory\cite{bornproof2}. For any reasonable definition of probability, the Everett interpretation is able to show that the above measure satisfies it without any additional postulates.\cite{bornproof3}\cite{bornproof2summary}\cite{chris}
 
 \section{Arguments For and Against the Everett Interpretation}
 \label{sec:args}
@@ -259,7 +265,7 @@ which is about the probability of picking four random atoms in the universe and 
 \subsection{The Arrow of Time}
 \label{sec:time}
 
-Another objection to the Everett interpretation is that it is time-symmetric. Since the Everett interpretation is just the wave equation, its time symmetry follows from the fact that the Schrodinger equation is time-reversal invariant, or more technically, charge-parity-time-reversal (CPT) invariant. The Copenhagen interpretation, however, is not, since wave function collapse is a fundamentally irreversible event.\cite{time} In fact, CPT symmetry is not the only natural property that wave function collapse lacks that the Schrodinger equation has---wave function collapse breaks linearity, unitarity, differentiability, locality, and determinism.\cite{faq}\cite{lesswrongcollapse} The Everett interpretation, by virtue of consisting of nothing but the Schrodinger equation, preserves all of these properties. This is an argument in favor of the Everett interpretation, since there are strong theoretical and empirical reasons to believe that such symmetries are properties of the universe.\cite{quantumviolation}\cite{cptsym}\cite{linearity}\cite{townsend}
+Another objection to the Everett interpretation is that it is time-symmetric. Since the Everett interpretation is just the wave equation, its time symmetry follows from the fact that the Schrodinger equation is time-reversal invariant, or more technically, charge-parity-time-reversal (CPT) invariant. The Copenhagen interpretation, however, is not, since wave function collapse is a fundamentally irreversible event.\cite{time} In fact, CPT symmetry is not the only natural property that wave function collapse lacks that the Schrodinger equation has---wave function collapse breaks linearity, unitarity, differentiability, locality, and determinism.\cite{wallacebook}\cite{manyworldsbook}\cite{faq}\cite{lesswrongcollapse} The Everett interpretation, by virtue of consisting of nothing but the Schrodinger equation, preserves all of these properties. This is an argument in favor of the Everett interpretation, since there are strong theoretical and empirical reasons to believe that such symmetries are properties of the universe.\cite{quantumviolation}\cite{cptsym}\cite{linearity}\cite{townsend}
 
 Nevertheless, as we mentioned above, it has been argued that the Copenhagen interpretation's breaking of CPT symmetry is actually a point in its favor, since it supposedly explains the arrow of time, the idea that time does not behave symmetrically in our everyday experience.\cite{time} Unfortunately for the Copenhagen interpretation, wave function collapse does not actually imply any of the desired thermodynamic properties of the arrow of time.\cite{time} Furthermore, under the Everett interpretation, the arrow of time can be explained using the standard thermodynamic explanation that the universe started in a very low-entropy state.\cite{arrowoftime}
 
