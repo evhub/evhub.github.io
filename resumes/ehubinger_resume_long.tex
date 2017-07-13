@@ -104,7 +104,7 @@
 %
 \usepackage{fancyhdr,lastpage}
 \pagestyle{fancy}
-% \pagestyle{empty}      % Uncomment this to get rid of page numbers
+\pagestyle{empty}      % Uncomment this to get rid of page numbers
 \fancyhf{}\renewcommand{\headrulewidth}{0pt}
 \fancyfootoffset{\marginparsep+\marginparwidth}
 \newlength{\footpageshift}
@@ -233,7 +233,7 @@
   \textbf{Harvey Mudd College}, Claremont, CA
   \hfill Expected Graduation: May 2019 \\
   \-\quad \textbf{B.S. in Mathematics and Computer Science}
-  \hfill GPA: 3.856 (Dean's List) \\
+  \hfill GPA: 3.7 (Dean's List) \\
 
   \textbf{The College Preparatory School}, Oakland, CA
   \hfill Graduated: May 2015
@@ -245,7 +245,7 @@
   \end{minipage}
   \begin{minipage}[t]{.555\textwidth}
   \textbf{Proficient} \\
-  \verb|Go, JavaScript, C++, Haskell, MATLAB|
+  \verb|Haskell, C++, JavaScript, CoffeeScript, MATLAB|
   \end{minipage}
   \begin{minipage}[t]{.32\textwidth}
   \textbf{Knowledgeable} \\
@@ -253,29 +253,17 @@
   \end{minipage}
 
 \section{Summary}
-  Four summers of professional software engineering experience at Google, Yelp, and Ripple. Created two major open-source projects, the Coconut programming language and Undebt, which together have over 2,000 stars on GitHub. Dean's list student majoring in mathematics and computer science at Harvey Mudd College.
+  Three summers of professional software engineering experience, one at Yelp and two at Ripple. Created two major open-source projects, the Coconut programming language and Undebt, which together have over 2,000 stars on GitHub. Dean's list student majoring in mathematics and computer science at Harvey Mudd College.
 
 \section{Work Experience}
-
-\textbf{Site Reliability Engineering Intern}
-\hfill May - August 2017 \\
-\textbf{Google, Mountain View, CA} \\
-$\bullet$ Worked as a Launch Coordination Engineer developing the software Google uses to perform production reviews of new launches. \\
-$\bullet$
-
-\textbf{Computer Science Grader and Tutor}
-\hfill January - May 2016; September 2016 - May 2017 \\
-\textbf{Harvey Mudd College, Claremont, CA} \\
-$\bullet$ Graded and tutored Data Structures and Program Development, Principles and Practices of Computer Science, and Computer Science for Insight. \\
-
 \textbf{Software Engineering Intern}
 \hfill June - August 2016 \\
 \textbf{Yelp, San Francisco, CA} \\
 $\bullet$ Primary author of Undebt, an open-source static code analysis tool for massive automated code refactoring with over 1,300 stars on GitHub. \\
 $\bullet$ Wrote a blog post on Undebt (link below), which proved to be Yelp's most popular blog post to date and was featured on the front page of Hacker News. \\
 \url{https://engineeringblog.yelp.com/2016/08/undebt-how-we-refactored-3-million-lines-of-code.html} \\
-$\bullet$ Fixed errors in Yelp's configuration management that had previously taken down yelp.com. \\
-$\bullet$ Rewrote Yelp's system for running large batch data processing operations in EMR. \\
+$\bullet$ Fixed errors in Yelp's configuration management that had previously taken down yelp.com multiple times. \\
+$\bullet$ Rewrote Yelp's system for running large batch data processing operations with EMR. \\
 
 \textbf{Software Engineering Intern}
 \hfill June - August 2014; June - August 2015 \\
@@ -290,66 +278,33 @@ $\bullet$ Developed a program to manage Ripple's GitHub infrastructure.
 \url{http://coconut-lang.org} \\
 Created the Coconut programming language, a novel functional programming language that compiles to Python. Coconut has been viewed over 35,000 times, has collected over 700 stars on GitHub, has been shown on the front page of Hacker News, r/Python, and r/Programming, has been featured on InfoWorld.com and Pointer.io, and has a regular, dedicated 45-person meetup in NYC. See Coconut's website (link above) for more information. \\
 
-\textbf{DeTeXiPi}
-\hfill October 2015 \\
-Hackathon project to load DeTeXify onto a Raspberry Pi and connect it to a computer as a keyboard that types out LaTeX commands for drawn symbols. \\
-
-\textbf{Discrete Wavelet Transform Steganography}
-\hfill April - May 2015 \\
-\url{https://github.com/evhub/steganography} \\
-Developed a program to perform image steganography using the discrete wavelet transform method. Written in Coconut. \\
-
 \textbf{Iterated Recursive Prisoner's Dilemma Simulator}
 \hfill April 2015 \\
 \url{https://github.com/evhub/prisoner} \\
-Developed a library for performing and competing in iterated prisoner's dilemma competitions in which the competing programs can simulate the opposing programs. Written in Coconut. \\
-
-\textbf{The Rabbit Programming Language}
-\hfill April - December 2014 \\
-\url{https://github.com/evhub/rabbit} \\
-Created the Rabbit Programming Language, a purely functional, interpreted, dynamically-typed scripting language built on top of universal Python for full interoperability. Wrote a technical paper describing the language, which can be found on GitHub.
+Developed a library for performing and competing in iterated prisoner's dilemma competitions in which the competing programs can simulate the opposing programs. Written in Coconut.
 
 \section{Open Source Contributions}
-  \textbf{Pre-Commit}
-  Fixed an issue that prevented installation on Windows machines. \\
-  \textbf{Conda}
-  Fixed an issue that prevented installation of certain PyPI packages. \\
+  \textbf{The Python Programming Language}
+  Minor unittest and documentation improvements. \\
   \textbf{Jupyter (IPython)}
   Fixed an issue that broke custom syntax highlighting. \\
   \textbf{Python Typeshed}
   Added type annotations for standard library module \verb|future_builtins|. \\
-  \textbf{PyParsing}
-  Fixed numerous issues including Unicode support and PyPy compatibility. \\
   \textbf{StaticConf}
   Improved resiliency in the event of missing data. \\
-  \textbf{The Python Programming Language}
-  Minor unittest and documentation improvements. \\
+  \textbf{PyParsing}
+  Fixed numerous issues including Unicode support and PyPy compatibility. \\
   \textbf{RippleD}
-  Significant improvements to the compilation/build process. \\
-  \textbf{Codius}
-  Minor improvements to Python sandboxing and documentation.
+  Significant improvements to the compilation/build process.
 
 \section{Relevant Courses}
-  \textbf{Computability and Logic}
-  \hfill Spring 2017 \\
-  \textbf{Mathematical Analysis}
-  \hfill Spring 2017 \\
   \textbf{Independent Study in Computer Science}
   \hfill Fall 2016 \\
   $\bullet$ Working directly with Prof. Chris Stone on Coconut development and research. \\
-  \textbf{Image Processing and Object Recognition}
-  \hfill Fall 2016 \\
-  \textbf{Advanced Differential Equations and Linear Algebra}
-  \hfill Summer 2016 \\
-  \textbf{Multivariable Calculus}
-  \hfill Summer 2016 \\
   \textbf{Discrete Mathematics}
   \hfill Spring 2016 \\
   \textbf{Data Structures and Program Development}
   \hfill Fall 2015
-
-\section{Other Activities and Awards}
-  National Forensics League Honor Society Outstanding Distinction (2015), National Policy Debate Tournament of Champions (2014, 2015), East Bay Debate League Assistant Tournament Director (2013 - 2015), College Prep Computer Science Club Leader (2013 - 2015), National Latin Examination Summa Cum Laude (2014), National AP Scholar (2015), National Merit Commended Scholar (2014), International Mathematics and Verbal Talent Search High Honors (2010)
 
 %\section{Project Experience}
     %\textbf{Project Title}
