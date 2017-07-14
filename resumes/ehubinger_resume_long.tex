@@ -104,7 +104,7 @@
 %
 \usepackage{fancyhdr,lastpage}
 \pagestyle{fancy}
-\pagestyle{empty}      % Uncomment this to get rid of page numbers
+% \pagestyle{empty}      % Uncomment this to get rid of page numbers
 \fancyhf{}\renewcommand{\headrulewidth}{0pt}
 \fancyfootoffset{\marginparsep+\marginparwidth}
 \newlength{\footpageshift}
@@ -233,78 +233,180 @@
   \textbf{Harvey Mudd College}, Claremont, CA
   \hfill Expected Graduation: May 2019 \\
   \-\quad \textbf{B.S. in Mathematics and Computer Science}
-  \hfill GPA: 3.7 (Dean's List) \\
+  \hfill GPA: 3.856 (Dean's List)
+
+  \blankline
 
   \textbf{The College Preparatory School}, Oakland, CA
   \hfill Graduated: May 2015
 
 \section{Programming Languages}
-  \begin{minipage}[t]{.21\textwidth}
+  \begin{minipage}[t]{.21525\textwidth}
   \textbf{Expert} \\
   \verb|Python, Coconut|
   \end{minipage}
-  \begin{minipage}[t]{.555\textwidth}
+  \begin{minipage}[t]{.45475\textwidth}
   \textbf{Proficient} \\
-  \verb|Haskell, C++, JavaScript, CoffeeScript, MATLAB|
+  \verb|Go, JavaScript, C++, Haskell, Cython|
   \end{minipage}
-  \begin{minipage}[t]{.32\textwidth}
+  \begin{minipage}[t]{.33\textwidth}
   \textbf{Knowledgeable} \\
-  \verb|R, Java, Mathematica|
+  \verb|R, Java, MATLAB, Mathematica|
   \end{minipage}
 
 \section{Summary}
-  Three summers of professional software engineering experience, one at Yelp and two at Ripple. Created two major open-source projects, the Coconut programming language and Undebt, which together have over 2,000 stars on GitHub. Dean's list student majoring in mathematics and computer science at Harvey Mudd College.
+  Four summers of professional software engineering experience at Google, Yelp, and Ripple. Author of Undebt and the Coconut programming language, together with over 2,500 stars on GitHub. Presented on Coconut at PyCon 2017 and interviewed on Coconut for TalkPython, Podcast.\_\_init\_\_, and Functional Geekery. Dean's list student majoring in mathematics and computer science at Harvey Mudd College.
 
 \section{Work Experience}
-\textbf{Software Engineering Intern}
-\hfill June - August 2016 \\
-\textbf{Yelp, San Francisco, CA} \\
-$\bullet$ Primary author of Undebt, an open-source static code analysis tool for massive automated code refactoring with over 1,300 stars on GitHub. \\
-$\bullet$ Wrote a blog post on Undebt (link below), which proved to be Yelp's most popular blog post to date and was featured on the front page of Hacker News. \\
-\url{https://engineeringblog.yelp.com/2016/08/undebt-how-we-refactored-3-million-lines-of-code.html} \\
-$\bullet$ Fixed errors in Yelp's configuration management that had previously taken down yelp.com multiple times. \\
-$\bullet$ Rewrote Yelp's system for running large batch data processing operations with EMR. \\
+\textbf{Site Reliability Engineering Intern}
+\hfill May -- August 2017 \\
+\textbf{Google, Mountain View, CA} \\
+$\bullet$ Worked as a Launch Coordination Engineer (LCE) developing the software Google uses to perform production readiness reviews of new product launches. \\
+$\bullet$ Revamped the custom Domain Specific Language used by LCEs to automate production readiness reviews.
+
+\blankline
+
+\textbf{Computer Science Grader and Tutor}
+\hfill January -- May 2016; September 2016 -- May 2017 \\
+\textbf{Harvey Mudd College, Claremont, CA} \\
+$\bullet$ Graded and tutored Data Structures and Program Development, Principles and Practices of Computer Science, and Computer Science for Insight.
+
+\blankline
 
 \textbf{Software Engineering Intern}
-\hfill June - August 2014; June - August 2015 \\
+\hfill June -- August 2016 \\
+\textbf{Yelp, San Francisco, CA} \\
+$\bullet$ Primary author of Undebt, an open-source static code analysis tool for massive automated code refactoring with over 1,400 stars on GitHub. \\
+$\bullet$ Wrote a blog post on Undebt (link below), which proved to be Yelp's most popular blog post to date and was featured on the front page of Hacker News. \\
+\url{https://engineeringblog.yelp.com/2016/08/undebt-how-we-refactored-3-million-lines-of-code.html} \\
+$\bullet$ Fixed errors in Yelp's configuration management that had previously taken down yelp.com. \\
+$\bullet$ Rewrote Yelp's system for running large data processing operations in Elastic Map Reduce.
+
+\blankline
+
+\textbf{Software Engineering Intern}
+\hfill June -- August 2014; June -- August 2015 \\
 \textbf{Ripple, San Francisco, CA} \\
 $\bullet$ Worked on designing Interledger, a trustless system for cross-currency transactions between arbitrary agents. \\
 $\bullet$ Wrote a tool to do cryptographically secure generation of wallets for financial institutions. \\
-$\bullet$ Developed a program to manage Ripple's GitHub infrastructure.
+$\bullet$ Contributed significant improvements to the compilation/build process of the open-source RippleD project.
 
 \section{Personal Projects}
 \textbf{The Coconut Programming Language}
-\hfill October 2014 - Present \\
+\hfill October 2014 -- Present \\
 \url{http://coconut-lang.org} \\
-Created the Coconut programming language, a novel functional programming language that compiles to Python. Coconut has been viewed over 35,000 times, has collected over 700 stars on GitHub, has been shown on the front page of Hacker News, r/Python, and r/Programming, has been featured on InfoWorld.com and Pointer.io, and has a regular, dedicated 45-person meetup in NYC. See Coconut's website (link above) for more information. \\
+$\bullet$ Created the Coconut programming language, a novel functional programming language that compiles to any version of Python. Supports pattern-matching, algebraic data types, TRE/TCO, and much more. \\
+$\bullet$ Coconut has been viewed over 50,000 times; has over 1,100 stars on GitHub; has been shown on the front page of Hacker News, r/Python, and r/Programming; and has been featured on InfoWorld.com and Pointer.io. \\
+$\bullet$ Presented on Coconut at PyCon 2017 (see \url{https://us.pycon.org/2017/schedule/presentation/56}). \\
+$\bullet$ Interviewed on Coconut for \href{https://talkpython.fm/episodes/show/117/functional-python-with-coconut}{TalkPython}, \href{https://www.podcastinit.com/episode-112-coconut-with-evan-hubinger}{Podcast.\_\_init\_\_}, and \href{https://www.functionalgeekery.com/episode-94-evan-hubinger}{Functional Geekery}.
+
+\blankline
+
+\textbf{cPyparsing}
+\hfill July 2017 \\
+\url{https://github.com/evhub/cpyparsing} \\
+Reimplemented PyParsing in Cython to achieve a $\approx30\%$ performance upgrade for Coconut and Undebt.
+
+\blankline
+
+\textbf{Cards Against Humanity}
+\hfill July 2014 -- May 2017 \\
+\url{https://github.com/evhub/cards-against-humanity} \\
+Developed a program for playing Cards Against Humanity with custom cards over IRC. Written in Coconut.
+
+\blankline
+
+\textbf{PyProver}
+\hfill March 2017 \\
+\url{https://github.com/evhub/pyprover} \\
+Developed a library for resolution theorem proving in first-order predicate logic. Written in Coconut.
+
+\blankline
+
+\textbf{De\TeX iPi}
+\hfill October 2015 \\
+Hackathon project to laod De\TeX ify onto a Raspberry Pi, connect it to a computer, draw symbols on it, and have it type out the \LaTeX~commands for those symbols on the computer.
+
+\blankline
+
+\textbf{Discrete Wavelet Transform Steganography}
+\hfill April -- May 2015 \\
+\url{https://github.com/evhub/steganography} \\
+Developed a program to perform discrete wavelet transform image steganography. Written in Coconut.
+
+\blankline
 
 \textbf{Iterated Recursive Prisoner's Dilemma Simulator}
 \hfill April 2015 \\
 \url{https://github.com/evhub/prisoner} \\
 Developed a library for performing and competing in iterated prisoner's dilemma competitions in which the competing programs can simulate the opposing programs. Written in Coconut.
 
+\blankline
+
+\textbf{The Rabbit Programming Language}
+\hfill April -- December 2014 \\
+\url{https://github.com/evhub/rabbit} \\
+Created the Rabbit programming language, a purely functional, interpreted, dynamically-typed scripting language built on top of Python. Wrote a technical paper describing the language.
+
 \section{Open Source Contributions}
-  \textbf{The Python Programming Language}
-  Minor unittest and documentation improvements. \\
-  \textbf{Jupyter (IPython)}
-  Fixed an issue that broke custom syntax highlighting. \\
+  \textbf{Pre-Commit}
+  Fixed an issue that prevented installing pre-commit on Windows machines.
+  \hfill July 2017
+
+  \textbf{Conda}
+  Added support for advanced PEP 496 packaging features.
+  \hfill May 2017
+
   \textbf{Python Typeshed}
-  Added type annotations for standard library module \verb|future_builtins|. \\
+  Added type annotations for the \verb|future_builtins| module.
+  \hfill October 2016
+
+  \textbf{Jupyter (IPython)}
+  Added support for custom syntax highlighting.
+  \hfill July 2016
+
   \textbf{StaticConf}
-  Improved resiliency in the event of missing data. \\
+  Improved resiliency in the event of missing data.
+  \hfill September 2016
+
   \textbf{PyParsing}
-  Fixed numerous issues including Unicode support and PyPy compatibility. \\
-  \textbf{RippleD}
-  Significant improvements to the compilation/build process.
+  Fixed numerous issues including Unicode support and PyPy compatibility.
+  \hfill November 2015
 
 \section{Relevant Courses}
+  \textbf{Computability and Logic}
+  \hfill Spring 2017
+
+  \textbf{Mathematical Analysis}
+  \hfill Spring 2017
+
   \textbf{Independent Study in Computer Science}
   \hfill Fall 2016 \\
-  $\bullet$ Working directly with Prof. Chris Stone on Coconut development and research. \\
+  $\bullet$ Worked directly with Professor Christopher Stone on Coconut development and research.
+
+  \textbf{Image Processing and Object Recognition}
+  \hfill Fall 2016
+
+  \textbf{Advanced Differential Equations and Linear Algebra}
+  \hfill Summer 2016
+
+  \textbf{Multivariable Calculus}
+  \hfill Summer 2016
+
   \textbf{Discrete Mathematics}
-  \hfill Spring 2016 \\
+  \hfill Spring 2016
+
   \textbf{Data Structures and Program Development}
   \hfill Fall 2015
+
+\section{Other Activities and Awards}
+  \textbf{Harvey Mudd College Physics Department Rojansky Writing Award Winner} \hfill May 2017 \\
+  \url{http://evhub.github.io/papers/everett.pdf} \\
+  Awarded for the clear and concise technical writing in my paper \emph{Multiple Worlds, One Universal Wave Function} (link above).
+
+  \blankline
+
+  Effective Altruism Global Attendee (2017) --- World Wide Web Consortium Interledger Payments Community Group Member (2016) --- National Forensics League Honor Society Outstanding Distinction (2015) --- National Policy Debate Tournament of Champions (2014, 2015) --- East Bay Debate League Assistant Tournament Director (2013 -- 2015) --- College Prep Computer Science Club Leader (2013 -- 2015) --- National Latin Examination Summa Cum Laude (2014) --- National AP Scholar (2015) --- National Merit Commended Scholar (2014) --- International Mathematics and Verbal Talent Search High Honors (2010)
 
 %\section{Project Experience}
     %\textbf{Project Title}
