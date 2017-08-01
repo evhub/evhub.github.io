@@ -1,28 +1,11 @@
-\documentclass[final,hyperref={pdfpagelabels=false}]{beamer}
 
-\usepackage[
-    size=custom,
-    orientation=landscape,
-    width=121.92,  % 4'
-    height=76.2,  % 30''
-    scale=1.45,
-]{beamerposter}
-\usetheme{I6pd2}
-
-\usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage{enumerate}
-\usepackage{graphicx}
-\usepackage{hyperref}
-\usepackage{booktabs}
+\documentclass{article}
 \usepackage{fancyvrb}
 \usepackage{color}
+\usepackage[utf8]{inputenc}
 
-\usecaptiontemplate{\small\structure{\insertcaptionname~\insertcaptionnumber: }\insertcaption}
-\addtobeamertemplate{block end}{}{\vspace*{2ex}}
 
-% Coconut highlighting
+
 \makeatletter
 \def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
     \let\PY@ul=\relax \let\PY@tc=\relax%
@@ -123,93 +106,14 @@
 \def\PYZrb{]}
 \makeatother
 
-\newcommand{\m}[1]{\begin{bmatrix}#1\end{bmatrix}}
-\newcommand{\tx}[1]{\text{#1}}
-\newcommand{\pn}[1]{\left(#1\right)}
-\newcommand{\abs}[1]{\left|#1\right|}
-\newcommand{\bk}[1]{\left[#1\right]}
-\newcommand{\abk}[1]{\left\langle#1\right\rangle}
-\newcommand{\set}[1]{\left\{#1\right\}}
-\newcommand{\ellipsis}{\,\ldots}
-\newcommand{\given}{\,|\,}
-\newcommand{\barsep}{~|~}
-\newcommand{\mbf}[1]{\mathbf{#1}}
-\newcommand{\mbb}[1]{\mathbb{#1}}
-\newcommand{\impl}{\rightarrow}
-\newcommand{\dubimpl}{\leftrightarrow}
-
-\title{Coconut}
-\subtitle{A Novel Language for Functional Programming in Python}
-\author{by Evan Hubinger}
-
-\newcommand{\leftfoot}{Website: coconut-lang.org}
-\newcommand{\rightfoot}{GitHub: github.com/evhub/coconut}
 
 \begin{document}
-\begin{frame}[containsverbatim,t] % The whole poster is enclosed in one beamer frame
-\begin{columns}[t] % The whole poster consists of two major columns, each of which can be subdivided further with another \begin{columns} block - the [t] argument aligns each column's content to the top
 
-\begin{column}{.011\textwidth}\end{column} % Empty spacer column
-\begin{column}{.32\textwidth} % The first column
+\section*{}
 
-
-\begin{block}{What Is Coconut?}
-\includegraphics[scale=1.95]{coconut_fp.png}
-
-\large Coconut is a \textbf{variant of Python} built for \textbf{simple, elegant, Pythonic functional programming}.
-\end{block}
-
-\begin{block}{Do I Have to Give Up Python?}
-\begin{minipage}{0\textwidth}
-\includegraphics[scale=1.5]{coconut_syntax.png}
-\end{minipage} \hfill \begin{minipage}{0.45\textwidth}
-\large All valid Python 3 syntax is valid Coconut syntax, which means you can get started writing Coconut just as you would Python.
-\end{minipage}
-\end{block}
-
-\begin{block}{How Does Coconut Work?}
-\includegraphics[scale=2]{coconut_compilation.png}
-
-Coconut compiles to \textbf{any Python version or implementation}, allowing you to write and maintain one code base for any version of Python you want to run your code on.
-\end{block}
-
-\begin{block}{Why Use Coconut?}
-Coconut adds to Python built-in, syntactical support for:
-\begin{columns}
-\begin{column}{.5\textwidth}
-\begin{itemize}
-\item pattern-matching
-\item algebraic data types
-\item destructuring assignment
-\item partial application
-\item lazy lists
-\item function composition
-\end{itemize}
-\end{column}
-\begin{column}{.5\textwidth}
-\begin{itemize}
-\item prettier lambdas
-\item infix notation
-\item pipeline-style programming
-\item operator functions
-\item tail call optimization
-\item parallel programming
-\end{itemize}
-\end{column}
-\end{columns}
-
-\vspace{.01\textheight}
-
-\hspace{.5\textwidth} \ellipsis~ and much more!
-\end{block}
-
-
-\end{column} % End of the first column
-\begin{column}{.01\textwidth}\end{column} % Empty spacer column
-\begin{column}{.32\textwidth} % The second column
-
-\begin{block}{Coconut Does Pattern-Matching}
 \begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Pattern\PYZhy{}Matching:}
+
 \PY{k}{match} \PY{p}{[}\PY{n}{head}\PY{p}{]} \PY{o}{+} \PY{n}{tail} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{:}
     \PY{n+nb}{print}\PY{p}{(}\PY{n}{head}\PY{p}{,} \PY{n}{tail}\PY{p}{)}
 
@@ -230,11 +134,9 @@ Coconut adds to Python built-in, syntactical support for:
     \PY{p}{(}\PY{n}{quick\PYZus{}sort}\PY{p}{(}\PY{p}{[}\PY{n}{x} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{tail} \PY{k}{if} \PY{n}{x} \PY{o}{\PYZlt{}} \PY{n}{head}\PY{p}{]}\PY{p}{)}
         \PY{o}{+} \PY{p}{[}\PY{n}{head}\PY{p}{]}
         \PY{o}{+} \PY{n}{quick\PYZus{}sort}\PY{p}{(}\PY{p}{[}\PY{n}{x} \PY{k}{for} \PY{n}{x} \PY{o+ow}{in} \PY{n}{tail} \PY{k}{if} \PY{n}{x} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{head}\PY{p}{]}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-\end{block}
 
-\begin{block}{Coconut Does Algebraic Data Types}
-\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} ADTs:}
+
 \PY{k}{data} \PY{n+nc}{vector2}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{:}
     \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Immutable two\PYZhy{}element vector.\PYZdq{}\PYZdq{}\PYZdq{}}
     \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}abs\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
@@ -252,17 +154,9 @@ Coconut adds to Python built-in, syntactical support for:
 
 \PY{o}{@}\PY{n+nb}{addpattern}\PY{p}{(}\PY{n}{size}\PY{p}{)}
 \PY{k}{def} \PY{n+nf}{size}\PY{p}{(}\PY{n}{Node}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n}{r}\PY{p}{)}\PY{p}{)} \PY{o}{=} \PY{n}{size}\PY{p}{(}\PY{n}{l}\PY{p}{)} \PY{o}{+} \PY{n}{size}\PY{p}{(}\PY{n}{r}\PY{p}{)}
-\end{Verbatim}
-\end{block}
 
+\PY{c+c1}{\PYZsh{} TCO:}
 
-\end{column} % End of the second column
-\begin{column}{.01\textwidth}\end{column} % Empty spacer column
-\begin{column}{.32\textwidth} % The third column
-
-
-\begin{block}{Coconut Does Tail Call Optimization}
-\begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{def} \PY{n+nf}{factorial}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{acc}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)} \PY{o}{=} \PY{n}{acc}
 
 \PY{o}{@}\PY{n+nb}{addpattern}\PY{p}{(}\PY{n}{factorial}\PY{p}{)}
@@ -278,11 +172,9 @@ Coconut adds to Python built-in, syntactical support for:
 \PY{k}{def} \PY{n+nf}{is\PYZus{}odd}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)} \PY{o}{=} \PY{k+kc}{False}
 \PY{o}{@}\PY{n+nb}{addpattern}\PY{p}{(}\PY{n}{is\PYZus{}odd}\PY{p}{)}
 \PY{k}{def} \PY{n+nf}{is\PYZus{}odd}\PY{p}{(}\PY{n}{n} \PY{o+ow}{is} \PY{n+nb}{int} \PY{k}{if} \PY{n}{n} \PY{o}{\PYZgt{}} \PY{l+m+mi}{0}\PY{p}{)} \PY{o}{=} \PY{n}{is\PYZus{}even}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
-\end{Verbatim}
-\end{block}
 
-\begin{block}{Coconut Does Much, Much More}
-\begin{Verbatim}[commandchars=\\\{\}]
+\PY{c+c1}{\PYZsh{} Much, Much More:}
+
 \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hello, world!}\PY{l+s+s2}{\PYZdq{}} \PY{o}{|\PYZgt{}} \PY{n+nb}{print}
 
 \PY{n}{product} \PY{o}{=} \PY{n+nb}{reduce}\PY{o}{\PYZdl{}}\PY{p}{(}\PY{o}{*}\PY{p}{)}
@@ -304,14 +196,7 @@ Coconut adds to Python built-in, syntactical support for:
     \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}Infinite sequence of fibonacci numbers.\PYZdq{}\PYZdq{}\PYZdq{}}
     \PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)} \PY{o}{::} \PY{n+nb}{map}\PY{p}{(}\PY{p}{(}\PY{o}{+}\PY{p}{)}\PY{p}{,} \PY{n}{fib\PYZus{}seq}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{n}{fib\PYZus{}seq}\PY{p}{(}\PY{p}{)}\PY{o}{\PYZdl{}}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}\PY{p}{)}
 
-\PY{n}{fib\PYZus{}seq}\PY{p}{(}\PY{p}{)}\PY{o}{\PYZdl{}}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{100}\PY{p}{]} \PY{o}{|\PYZgt{}} \PY{n+nb}{parallel\PYZus{}map}\PY{o}{\PYZdl{}}\PY{p}{(}\PY{n+nb}{pow}\PY{o}{\PYZdl{}}\PY{p}{(}\PY{k}{?}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)} \PY{o}{|\PYZgt{}} \PY{n+nb}{list}
+\PY{n}{fib\PYZus{}seq}\PY{p}{(}\PY{p}{)}\PY{o}{\PYZdl{}}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{100}\PY{p}{]} \PY{o}{|\PYZgt{}} \PY{n+nb}{parallel\PYZus{}map}\PY{o}{\PYZdl{}}\PY{p}{(}\PY{n+nb}{pow}\PY{o}{\PYZdl{}}\PY{p}{(}\PY{o}{?}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)} \PY{o}{|\PYZgt{}} \PY{n+nb}{list}
 \end{Verbatim}
-\end{block}
 
-
-\end{column} % End of the third column
-\begin{column}{.009\textwidth}\end{column} % Empty spacer column
-
-\end{columns} % End of all the columns in the poster
-\end{frame} % End of the enclosing frame
 \end{document}

@@ -80,6 +80,6 @@ def natural_nums(n=0) =
 @recursive_iterator
 def fib_seq() =
     """Infinite sequence of fibonacci numbers."""
-    (1, 2) :: map((+), fib_seq(), fib_seq()$[1:])
+    (1, 1) :: map((+), fib_seq(), fib_seq()$[1:])
 
 fib_seq()$[:100] |> parallel_map$(pow$(?, 2)) |> list
