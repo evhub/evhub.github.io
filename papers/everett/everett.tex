@@ -18,21 +18,52 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{epigraph}
+\usepackage{bm}
 
-\newcommand{\m}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\m}[1]{\begin{pmatrix}#1\end{pmatrix}}
 \newcommand{\tx}[1]{\text{#1}}
 \newcommand{\pn}[1]{\left(#1\right)}
 \newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
 \newcommand{\bk}[1]{\left[#1\right]}
 \newcommand{\abk}[1]{\left\langle#1\right\rangle}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
 \newcommand{\set}[1]{\left\{#1\right\}}
 \newcommand{\ellipsis}{\,\ldots}
 \newcommand{\given}{\,|\,}
-\newcommand{\barsep}{~|~}
-\newcommand{\mbf}[1]{\mathbf{#1}}
-\newcommand{\mbb}[1]{\mathbb{#1}}
+\newcommand{\where}{\mid}
+\newcommand{\bbm}[1]{\mathbb{#1}}
 \newcommand{\impl}{\rightarrow}
 \newcommand{\dubimpl}{\leftrightarrow}
+\newcommand{\calm}[1]{\mathcal{#1}}
+\newcommand{\obar}[1]{\overline{#1}}
+\newcommand{\lcm}{\text{lcm}}
+\newcommand{\image}{\text{image}}
+\newcommand{\maxof}[1]{\max\set{#1}}
+\newcommand{\minof}[1]{\min\set{#1}}
+\newcommand{\iso}{\cong}
+\newcommand{\sub}{\subseteq}
+\newcommand{\comp}{\circ}
+\newcommand{\al}{\forall}
+\newcommand{\ex}{\exists}
+\newcommand{\integ}{\int}
+\newcommand{\gam}{\gamma}
+\newcommand{\del}{\delta}
+\newcommand{\Del}{\Delta}
+\newcommand{\lam}{\lambda}
+\newcommand{\Lam}{\Lambda}
+\newcommand{\eps}{\epsilon}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+
+\newcommand{\ensurebbm}[1]{\ensuremath{\mathbb{#1}}}
+\newcommand{\C}{\ensurebbm{C}}
+\newcommand{\Z}{\ensurebbm{Z}}
+\newcommand{\R}{\ensurebbm{R}}
+\newcommand{\N}{\ensurebbm{N}}
+\newcommand{\Q}{\ensurebbm{Q}}
+\newcommand{\F}{\ensurebbm{F}}
 
 \let\origfootnote\footnote
 \renewcommand{\footnote}[1]{%
@@ -50,6 +81,7 @@
 \author{Evan Hubinger}
 \affiliation{Harvey Mudd College}
 \date{April 30, 2017}
+\collaboration{Winner of the 2017 \href{https://physics.hmc.edu/student/award/22/}{Rojansky Writing Award} for most outstanding paper in quantum mechanics.}
 
 \begin{abstract}
 We seek to present and defend the view that the interpretation of quantum mechanics is no more complicated than the interpretation of plate tectonics: that which is being studied is real, and that which the theory predicts is true. The view which holds that the mathematical formalism of quantum mechanics---without any additional postulates---is a complete description of reality is known as the Everett interpretation. We seek to defend the Everett interpretation of quantum mechanics as the most probable interpretation available. To accomplish this task, we analyze the history of the Everett interpretation, provide mathematical backing for its assertions, respond to criticisms that have been leveled against it, and compare it to its modern alternatives.
@@ -107,7 +139,7 @@ Suppose we have a system $S$ with eigenfunctions $\set{\phi_i}$ and initial stat
 \[
     \Psi_0 = \psi \phi = \psi \sum_i a_i \phi_i
 \]
-Then, our goal is to understand what happens to $\Psi$ when $O$ repeatedly observes $S$. Thus, we will define $\Psi_n$ to represent the state of $\Psi$ after $n \in \mbb N$ independent observations of $S$ are performed by $O$.
+Then, our goal is to understand what happens to $\Psi$ when $O$ repeatedly observes $S$. Thus, we will define $\Psi_n$ to represent the state of $\Psi$ after $n \in \bbm N$ independent observations of $S$ are performed by $O$.
 
 Consider the simple case where $\phi = \phi_0$ and thus we are in initial state $\Psi_0 = \psi \phi_0$. In this case, by our previous definition of $\psi_i$ and requirement that $\phi_i$ remain unchanged, we can write the state after the observation as $\Psi_1 = \psi_0 \phi_0$. Since quantum mechanics is linear, and the eigenfunctions $\phi_i$ are orthogonal, it must be that this same process occurs for each $\phi_i$.
 
@@ -133,7 +165,7 @@ From the perspective of each $O_i$ in this scenario it will appear as if $\phi$ 
 
 \subsection{The Apparent Randomness of Measurement}
 
-Suppose we now have many such systems $S$, which we will denote $S_n$ where $n \in \mbb N$. Consider $O$ from before, but with the modification that instead of repeatedly observing a single $S$, $O$ observes different $S_n$ in each measurement, such that $\Psi_n$ is the joint system-observer wave function after measuring the $n$th $S_n$.
+Suppose we now have many such systems $S$, which we will denote $S_n$ where $n \in \bbm N$. Consider $O$ from before, but with the modification that instead of repeatedly observing a single $S$, $O$ observes different $S_n$ in each measurement, such that $\Psi_n$ is the joint system-observer wave function after measuring the $n$th $S_n$.
 
 As before, we will define the initial joint wave function $\Psi_0$ as
 \begin{align*}
@@ -246,9 +278,9 @@ Another common objection to the Everett interpretation is that it ``postulates t
 
 In fact, Occam's razor is an incredibly strong argument in favor of the Everett interpretation. To explain this, we will first need to formalize what we mean by Occam's razor, which will require some measure of theoretical computer science. Specifically, we will make use of Solomonoff's theory of inductive inference: the best, most general framework we have for comparing the probability of empirically indistinguishable physical theories.\cite{solomonoff}\cite{occam}\cite{lesswrongsolomonoff}\footnote{In some of these sources, the equivalent formalism of Kolmogorov complexity is used instead.} To use Solomonoff's formalism, only one assumption is required of us: under some encoding scheme, competing theories of the universe can be modeled as programs. This assumption does not imply that the universe must be computable, only that it can be computably described, which all physical theories capable of being written down must abide by. From this assumption, and the axioms of probability theory, Solomonoff induction can be derived.\cite{solomonoff}
 
-Solomonoff induction tells us that, if we have a set of programs\footnote{To be precise, these should be universal Turing machine programs.} $\set{T_i}$ which encode for empirically indistinguishable physical theories, the probability $\mbb P$ of the theory described by a given program $T_i$ with length in bits (0s and 1s) $\abs{T_i}$ is given by
+Solomonoff induction tells us that, if we have a set of programs\footnote{To be precise, these should be universal Turing machine programs.} $\set{T_i}$ which encode for empirically indistinguishable physical theories, the probability $\bbm P$ of the theory described by a given program $T_i$ with length in bits (0s and 1s) $\abs{T_i}$ is given by
 \[
-    \mbb P(T_i) \sim 2^{-\abs{T_i}}
+    \bbm P(T_i) \sim 2^{-\abs{T_i}}
 \]
 up to a constant normalization factor calculated across all the $\set{T_i}$ to make the probabilities sum to 1.\cite{solomonoff} We can see how this makes intuitive sense, since if we are predicting an arbitrary system, and thus have no information about the correctness of a program implementing a theory other than its length in bits, we are forced to assign equal probability to each of the two options for each bit, 0 and 1, and thus each additional bit adds a factor of $\frac{1}{2}$ to the total probability of the program. Furthermore, we can see how Solomonoff induction serves as a formalization of Occam's razor, since it gives us a way of calculating how much to discount longer, more complex theories in favor of shorter, simpler ones.
 
@@ -256,11 +288,11 @@ Now, we will attempt to apply this formalism to assign probabilities to competin
 
 To get a sense of the magnitude of these effects, we will attempt to approximate how much less probable the Copenhagen interpretation is than the Everett interpretation. We will represent the Copenhagen interpretation $C$ as made of three parts: $W$, wave mechanics; $O$, a machine which determines when to collapse the wave function; and $L$, classical mechanics. Then, where the Everett interpretation $E$ is just $W$, we can write their relative probabilities as
 \[
-    \frac{\mbb P(C)}{\mbb P(E)} = \frac{2^{-\abs W-\abs O-\abs L}}{2^{-\abs W}} = 2^{-\abs O-\abs L}
+    \frac{\bbm P(C)}{\bbm P(E)} = \frac{2^{-\abs W-\abs O-\abs L}}{2^{-\abs W}} = 2^{-\abs O-\abs L}
 \]
 How large are $O$ and $L$? As a quick Fermi estimate for $L$, we will take Newton's three laws of motion, Einstein's general relativistic field equation, and Maxwell's four equations of electromagnetism as the principles of classical mechanics, for a total of 8 fundamental equations. Assume the minimal implementation for each one averages 100 bits---a very modest estimate, considering the smallest Chess program ever written is 3896 bits long.\cite{chess} Then, the relative probability is at most
 \[
-    \frac{\mbb P(C)}{\mbb P(E)} = 2^{-\abs O-\abs L} < 2^{-\abs L} \approx 2^{-800} \approx 2 \cdot 10^{-241}
+    \frac{\bbm P(C)}{\bbm P(E)} = 2^{-\abs O-\abs L} < 2^{-\abs L} \approx 2^{-800} \approx 2 \cdot 10^{-241}
 \]
 which is about the probability of picking four random atoms in the universe and getting the same one each time, and is thus so small as to be trivially dismissible.
 
